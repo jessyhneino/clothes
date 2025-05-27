@@ -21,10 +21,13 @@ HOME
                         Go towards a healthy and active lifestyle with our wonderful collection!
                     </p>
                 </div>
-                <a class="level-nav-link    nav-link" href="#browse"><button class="btn1">Get Started</button>   </a>
+                <div class="home-btn1">
+                    <a class="level-home btn1" href="#browse"><button>Get Started</button>   </a>
+                </div>
             </div>
-            <img src="{{asset('images/logostar3.png')}}" class="yoga">
-
+            <div class="home-img">
+                <img src="{{asset('images/logostar3.png')}}" class="yoga">
+            </div>
         </div>
 
         <!-- ------------------------------------------ end section home-------------------------------------  -->
@@ -34,10 +37,10 @@ HOME
 
         <div class="card-container">
             <div class="card-home">
-                <img src="{{asset('images/photo2.jpg')}}">
+                <img class="card-home-img" src="{{asset('images/photo2.jpg')}}">
                 <div class="card-content">
-                    <h3>Graphic Design</h3>
-                    <p>
+                    <h3 class="card-home-h3">Graphic Design</h3>
+                    <p class="card-home-p">
                         Graphic design for women combines elegance and creativity,
                          where focusing on attractive colors and innovative 
                          styles reflecting strength and femininity. 
@@ -45,14 +48,13 @@ HOME
                          highlight beauty and excellence. The design embodies the vision
                           of modern women and enhances its presence in the world of art and technology.
                     </p>
-                   
                 </div>
             </div>
             <div class="card-home">
-                <img src="{{asset('images/photo1.jpg')}}">
+                <img class="card-home-img" src="{{asset('images/photo1.jpg')}}">
                 <div class="card-content ">
-                    <h3  >Fashion Designer</h3>
-                    <p>
+                    <h3 class="card-home-h3">Fashion Designer</h3>
+                    <p class="card-home-p">
                         Fashion designer is a creative artist that embodies elegance
                         and innovation in every design.  It is characterized by a unique vision
                         that combines colors, fabrics, and fine details, which creates pieces that reflect the p
@@ -63,10 +65,10 @@ HOME
                 </div>
             </div>
             <div class="card-home">
-                <img src="{{asset('images/photo3.jpg')}}">
+                <img class="card-home-img" src="{{asset('images/photo3.jpg')}}">
                 <div class="card-content">
-                    <h3>Photographer</h3>
-                    <p>
+                    <h3 class="card-home-h3">Photographer</h3>
+                    <p class="card-home-p">
                         The photographer is an artist who captures enchanting moments in a unique style,
                          reflecting the spirit of femininity and the details of life, coloring them with
                           magical hues. Her lens is used to tell inspiring stories, showcasing emotions
@@ -76,10 +78,10 @@ HOME
                 </div>
             </div>
             <div class="card-home">
-                <img src="{{asset('images/photo4.jpg')}}">
+                <img class="card-home-img" src="{{asset('images/photo4.jpg')}}">
                 <div class="card-content">
-                    <h3>Casual Fashion</h3>
-                    <p>
+                    <h3 class="card-home-h3">Casual Fashion</h3>
+                    <p class="card-home-p">
                         Casual costumes for women combine comfort and elegance, 
                         as they feature simple designs and comfortable colors. 
                          It includes pieces such as jeans, loose shirts, and sports shoes,
@@ -95,7 +97,8 @@ HOME
 <!-- ------------------------------------------section clock-------------------------------------  -->
 
         <div class="clh">
-            <p>Set for yourself an hour a day,and enjoy the journey<br>
+            <p class="clh-p">
+                Set for yourself an hour a day,and enjoy the journey<br>
                 of the transformation towards a healthy and attractive body.<br>
                 with our comfortable and distinguished clothes of the club.
             </p>
@@ -146,28 +149,28 @@ HOME
                                         <img src="{{asset('images/shose.jpg')}}" alt="" class="user-image">
                                         <h2 class="user-name">Sneakers</h2>
                                         <a href="#shose">
-                                            <button class="btn1 message-button" >Look at</button> 
+                                            <!-- <button class="btn1 message-button" >Look at</button>  -->
                                         </a>
                                 </div>
                                 <div class="swiper-slide   slide">
                                         <img src="{{asset('images/Vison.jpg')}}" alt="" class="user-image">
                                         <h2 class="user-name">Leggings</h2>
                                         <a href="#browse">
-                                            <button class="btn1 message-button">Look at</button> 
+                                            <!-- <button class="btn1 message-button">Look at</button>  -->
                                         </a>
                                 </div>
                                 <div class="swiper-slide   slide">
                                         <img src="{{asset('images/sweater2.jpg')}}" alt="" class="user-image">
                                         <h2 class="user-name">Sweaters</h2>
                                         <a href="#browse">
-                                            <button class="btn1 message-button">Look at</button> 
+                                            <!-- <button class="btn1 message-button">Look at</button>  -->
                                         </a>
                                 </div>
                                 <div class="swiper-slide   slide">
                                         <img src="{{asset('images/jacket.jpg')}}" alt="" class="user-image">
                                         <h2 class="user-name">Jackets</h2>
                                         <a href="#browse">
-                                            <button class="btn1 message-button">Look at</button> 
+                                            <!-- <button class="btn1 message-button">Look at</button>  -->
                                         </a>
                                 </div>
                                 <div class="swiper-slide   slide">
@@ -175,21 +178,21 @@ HOME
                                         <h2 class="user-name">Socks</h2>
                                                 
                                         <a href="#browse">
-                                            <button class="btn1 message-button">Look at</button> 
+                                            <!-- <button class="btn1 message-button">Look at</button>  -->
                                         </a>
                                 </div>
                                 <div class="swiper-slide   slide">
                                         <img src="{{asset('images/towel.jpg')}}" alt="" class="user-image">
                                         <h2 class="user-name">Towels</h2>
                                         <a href="#browse">
-                                            <button class="btn1 message-button">Look at</button> 
+                                            <!-- <button class="btn1 message-button">Look at</button>  -->
                                         </a>
                                 </div>
                                 <div class="swiper-slide   slide">
                                         <img src="{{asset('images/suit.jpg')}}" alt="" class="user-image">
                                         <h2 class="user-name">Tracksuits</h2>
                                         <a href="#browse">
-                                            <button class="btn1 message-button">Look at</button> 
+                                            <!-- <button class="btn1 message-button">Look at</button>  -->
                                         </a>
                                 </div>
                         </div>
@@ -203,17 +206,16 @@ HOME
 <!-- ------------------------------------------end section swiper-------------------------------------  -->
 <!-- ------------------------------------------section view-------------------------------------  -->
         <div class="look">
-            <h3>"Explore the world of our products with its charming details,
+            <h3 class="look-h3">"Explore the world of our products with its charming details,
             just press the button and discover what awaits you!"
             </h3>
-            <a href="#shose">
+            <a class="look-a" href="#shose">
                 <button class="btn2">View The Product</button> 
             </a>
         </div>
 <!-- ------------------------------------------end section view-------------------------------------  -->
 <!-- ------------------------------------------section map-------------------------------------  -->
         <div class="map">
-            <!-- <h1>Google Map!</h1> -->
             <div class="mapd">
                 <iframe class="mapp" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d621714.
                     0783297188!2d14.084112070547121!3d52.50501170704109!2m3!1f0!2f0!3f0!3m2!1i1024!2i76
@@ -221,13 +223,13 @@ HOME
                     Zhdin2YbZitin!5e0!3m2!1sar!2s!4v1728457964551!5m2!1sar!2s">
                 </iframe>       
                 <div class="details">
-                    <h2>Visit one of our agency locations or contact us today </h2>
-                    <h3>Head Office</h3>
+                    <h2 class="map-h2">Visit one of our agency locations or contact us today </h2>
+                    <h3 class="map-h3">Head Office</h3>
                     <div class="inform">
-                        <p>  <i  class="fa-solid fa-flag"></i>    56 Glassford Street Glassgow GI IUL New York</p>
-                        <p>   <i  class="fa-solid fa-message"></i>    contact@lavender.com</p>
-                        <p>  <i  class="fa-solid fa-phone"></i>    contact@lavender.com</p>
-                        <p> <i  class="fa-solid fa-clock"></i>    Monday to Saturday :9.00am to 16pm</p>
+                        <p class="map-p">  <i  class="fa-solid fa-flag"></i>    56 Glassford Street Glassgow GI IUL New York</p>
+                        <p class="map-p">   <i  class="fa-solid fa-message"></i>    contact@lavender.com</p>
+                        <p class="map-p">  <i  class="fa-solid fa-phone"></i>    contact@lavender.com</p>
+                        <p class="map-p"> <i  class="fa-solid fa-clock"></i>    Monday to Saturday :9.00am to 16pm</p>
                     </div>
                 </div>
             </div>

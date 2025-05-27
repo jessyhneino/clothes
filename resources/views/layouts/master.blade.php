@@ -23,12 +23,12 @@
 
 <!-- ------------------------------------------ section navbar-------------------------------------  -->
 
-    <header>
+    <header class="head">
         <div class="both">
         
         <div class="logo-clothes">
             <a href="/home">
-                <img src="{{asset('images/logoClothes.png')}}" alt="logo_clothes">
+                <img class="nav-img" src="{{asset('images/logoClothes.png')}}" alt="logo_clothes">
             </a>
         </div>
         <div class="hamburger" onclick="toggleMenu()">
@@ -89,7 +89,7 @@
             <div class="container-footer">
                 <div class="wrapper">
                     <div class="footer-widget">
-                        <a href="">
+                        <a href="" class="footer-a">
                             <img src="{{asset('images/logolavend.jpg')}}" class="logo">
                         </a>
                         <p class="desc">
@@ -132,7 +132,7 @@
                     </div>
                 </div>
                 <div class="copyright-wrapper">
-                    <p>   &copy;2025 . All rights reseved. designed by Jessy / Zeina / Maya / Jawa .</p> 
+                    <p class="copyright-p">   &copy;2025 . All rights reseved. designed by Jessy / Zeina / Maya / Jawa .</p> 
                 </div>
             </div> 
         </footer>

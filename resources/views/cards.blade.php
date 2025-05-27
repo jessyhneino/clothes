@@ -28,7 +28,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
                         <a href="#details-product1"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
                         <a href="#details-product2"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ PRODUCTS
                             <i  class="fa-regular fa-star"></i>    
                         </div>
                         <a href="#details-product3"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                         </div>
                         <a href="#details-product4"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -121,7 +121,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                         </div>
                         <a href="#details-product5"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -144,7 +144,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
                         <a href="#details-product6"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -167,7 +167,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                         </div>
                         <a href="#details-product7"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -190,7 +190,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
                         <a href="#details-product8"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -214,7 +214,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
                         <a href="#details-product9"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -237,7 +237,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                         </div>
                         <a href="#details-product10"  >
-                            <button class="btn">Add To Cart</button>
+                            <button class="btn3">Add To Cart</button>
                         </a>
                     </div>
                 </div>
@@ -261,7 +261,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                         </div>
                         <a href="#details-product11"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -285,7 +285,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
                         <a href="#details-product12"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -308,7 +308,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
                         <a href="#details-product13"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -331,7 +331,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
                         <a href="#details-product14"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -354,7 +354,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                         </div>
                         <a href="#details-product15"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -377,7 +377,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                         </div>
                         <a href="#details-product16"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -400,7 +400,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                         </div>
                         <a href="#details-product17"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -423,7 +423,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                         </div>
                         <a href="#details-product18"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -446,7 +446,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                         </div>
                         <a href="#details-product19"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
@@ -469,7 +469,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                         </div>
                         <a href="#details-product20"  >
-                            <button class="btn">Add To Cart</button> 
+                            <button class="btn3">Add To Cart</button> 
                         </a>
                     </div>
                 </div>
