@@ -48,8 +48,6 @@ HOME
                    
                 </div>
             </div>
-
-
             <div class="card-home">
                 <img src="{{asset('images/photo1.jpg')}}">
                 <div class="card-content ">
@@ -62,10 +60,8 @@ HOME
                         Through its designs, it transmits the messages of strength and trust, making each piece
                         of artistic masterpiece tells a unique story.
                     </p>
-                  
                 </div>
             </div>
-     
             <div class="card-home">
                 <img src="{{asset('images/photo3.jpg')}}">
                 <div class="card-content">
@@ -79,7 +75,6 @@ HOME
                     </p>
                 </div>
             </div>
-
             <div class="card-home">
                 <img src="{{asset('images/photo4.jpg')}}">
                 <div class="card-content">
@@ -206,11 +201,17 @@ HOME
         </section>
 
 <!-- ------------------------------------------end section swiper-------------------------------------  -->
-
-
+<!-- ------------------------------------------section view-------------------------------------  -->
+        <div class="look">
+            <h3>"Explore the world of our products with its charming details,
+            just press the button and discover what awaits you!"
+            </h3>
+            <a href="#shose">
+                <button class="btn2">View The Product</button> 
+            </a>
+        </div>
+<!-- ------------------------------------------end section view-------------------------------------  -->
 <!-- ------------------------------------------section map-------------------------------------  -->
-
-
         <div class="map">
             <!-- <h1>Google Map!</h1> -->
             <div class="mapd">
@@ -231,16 +232,11 @@ HOME
                 </div>
             </div>
         </div>
-
 <!-- ------------------------------------------end section map-------------------------------------  -->
-
-
-
-            
         
-        <h1 class="text-3xl font-bold underline bg-sky-500 w-32 h-32">
+        <!-- <h1 class="text-3xl font-bold underline bg-blue-300 w-32 h-32">
                  Hello world!
-        </h1>
+        </h1> -->
             
 
 @endsection

@@ -9,6 +9,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/cards', function () {
+    return view('cards');
+});
 
 
 
