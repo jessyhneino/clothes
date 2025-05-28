@@ -6,6 +6,8 @@ PRODUCTS
 
 @section('content') 
 
+<!-- ------------------------------------------ section cards-------------------------------------  -->
+
     <form>
         <div  class="shose"  id="shose">
             <div class="box">
@@ -476,6 +478,7 @@ PRODUCTS
             </div>
         </div>
     </form>
+<!-- ------------------------------------------end section cards-------------------------------------  -->
 
 
 

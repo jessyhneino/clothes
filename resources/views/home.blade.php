@@ -209,7 +209,7 @@ HOME
             <h3 class="look-h3">"Explore the world of our products with its charming details,
             just press the button and discover what awaits you!"
             </h3>
-            <a class="look-a" href="#shose">
+            <a class="look-a" href="/cards">
                 <button class="btn2">View The Product</button> 
             </a>
         </div>

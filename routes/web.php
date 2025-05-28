@@ -12,6 +12,9 @@ Route::get('/home', function () {
 Route::get('/cards', function () {
     return view('cards');
 });
+Route::get('/complete', function () {
+    return view('complete');
+});
 
 
 
