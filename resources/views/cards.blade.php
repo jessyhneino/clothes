@@ -9,6 +9,7 @@ PRODUCTS
 <!-- ------------------------------------------ section cards-------------------------------------  -->
 
     <form>
+        <h1 class="head-shose"  > Latest Products </h1>
         <div  class="shose"  id="shose">
             <div class="box">
                 <div class="card">

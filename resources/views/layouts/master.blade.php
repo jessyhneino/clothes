@@ -160,6 +160,6 @@
 //   const swiper = new Swiper(...)
 </script>-->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{ asset('java/main.js') }}"></script>
+    <script src="{{ asset('java/main.js') }} " defer></script>
 </body>
 </html>

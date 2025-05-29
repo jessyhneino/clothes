@@ -85,3 +85,39 @@ sec_dot.style.transform = `rotate(${s * 6}deg)`;
 
 
 // end clock
+
+function animateLetters() {
+    const heading = document.querySelector(".head-shose");
+    const text = heading.textContent;
+    heading.innerHTML = ""; 
+
+    
+    text.split("").forEach((char, index) => {
+        const span = document.createElement("span");
+        span.textContent = char;
+        span.classList.add("letter");
+        heading.appendChild(span);
+
+       
+        setTimeout(() => {
+            span.style.opacity = 1;
+            span.style.transform = "translateY(0)";
+        }, index * 100); 
+    });
+
+
+    setTimeout(() => {
+        const letters = document.querySelectorAll(".letter");
+        letters.forEach((span, index) => {
+            setTimeout(() => {
+                span.style.opacity = 0;
+                span.style.transform = "translateY(20px)";
+            }, index * 100);
+        });
+    }, text.length * 100 + 1000); 
+
+   
+    setTimeout(animateLetters, text.length * 100 + 2000);
+}
+
+document.addEventListener("DOMContentLoaded", animateLetters);
