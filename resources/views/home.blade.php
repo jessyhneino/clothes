@@ -235,8 +235,8 @@ HOME
             </div>
         </div>
 <!-- ------------------------------------------end section map-------------------------------------  -->
-        
-        <!-- <h1 class="text-3xl font-bold underline bg-blue-300 w-32 h-32">
+<!--         
+        <h1 class="text-3xl font-bold underline bg-blue-300 w-32 h-32">
                  Hello world!
         </h1> -->
             
