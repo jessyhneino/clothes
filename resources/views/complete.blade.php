@@ -6,7 +6,7 @@ HOME
 
 @section('content')
 <!-- ------------------------------------------ section complete-------------------------------------  -->
-    <form id="details-product1" >
+    <form id="details-product1" > 
         <div class="details-product1  product1">
             <div class="image-pro1">
                 <img src="{{asset('images/bag.jpg')}}">

@@ -15,7 +15,7 @@ var swiper = new Swiper(".cloth-slider", {
   pagination: {
   el: ".swiper-pagination",
   clickable:true,
-  },
+  }, 
  
   breakpoints: {
     540: {
@@ -121,3 +121,74 @@ function animateLetters() {
 }
 
 document.addEventListener("DOMContentLoaded", animateLetters);
+
+
+// ********************HOME ***************
+
+    // document.addEventListener("DOMContentLoaded", function() {
+    //     const homeSection = document.getElementById('Home');
+    //     const hpElements = document.querySelectorAll('.HP, .home-btn1, .home-img');
+
+    //     function showElements() {
+    //         homeSection.classList.add('show');
+    //         hpElements.forEach((el, index) => {
+    //             setTimeout(() => {
+    //                 el.classList.add('animate');
+    //             }, index * 300); // Delay for each element
+    //         });
+    //     }
+
+    //     function hideElements() {
+    //         homeSection.classList.remove('show');
+    //         hpElements.forEach(el => {
+    //             el.classList.remove('animate');
+    //         });
+    //     }
+
+    //     // Event listener for scrolling to the Home section
+    //     window.addEventListener('scroll', () => {
+    //         const rect = homeSection.getBoundingClientRect();
+    //         if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+    //             showElements();
+    //         } else {
+    //             hideElements();
+    //         }
+    //     });
+
+    //     // Initial hide
+    //     hideElements();
+
+    //     // Show elements immediately on page load
+    //     showElements();
+    // });
+    
+
+
+
+// ******************** END HOME ***************
+
+function performSearch() {
+            var query = document.getElementById("searchInput").value.trim();
+            var elements = document.querySelectorAll(".container-new");
+
+            elements.forEach(function(element) {
+                element.innerHTML = element.dataset.originalText; 
+            });
+
+            
+            if (query === "") return; // لا شيء للبحث عنه
+
+            elements.forEach(function(element) {
+                var text = element.innerHTML;
+                var regex = new RegExp(`(${query})`, "gi");
+                var highlightedText = text.replace(regex, `<span class="highlight">$1</span>`);
+                element.innerHTML = highlightedText;
+            });
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            var elements = document.querySelectorAll(".container-new");
+            elements.forEach(function(element) {
+                element.dataset.originalText = element.innerHTML; 
+            });
+        });
+

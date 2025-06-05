@@ -37,8 +37,8 @@
         </div>
         <div class="nav-half">
             <div class="button-nav">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-dark button-search " type="submit">Search</button>
+                <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark button-search " type="submit" onclick="performSearch()">Search</button>
             </div>
             <nav class="navigation">
                 <div class="nav-link">

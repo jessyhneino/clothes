@@ -7,7 +7,7 @@ PRODUCTS
 @section('content') 
 
 <!-- ------------------------------------------ section cards-------------------------------------  -->
-
+ 
     <form>
         <h1 class="head-shose"  > Latest Products </h1>
         <div  class="shose"  id="shose">

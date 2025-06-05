@@ -10,12 +10,13 @@
     --background: #fce7f3;
     --nav: #fff;
     --text: black;
-    --mainPink: #FF389C;
+    --mainPink: #FF389c;
     --mainGray: #969090;
 }
-body {
+body { 
     width: 100%;
     /* height: 100vh; */
+    /* background-color: var(--background) !important; */
     background-color: var(--background) !important;
 }
 /* ------------------------------------------section navbar------------------------------------- */
@@ -128,6 +129,13 @@ body {
     color: var(--nav);
     background-color: var(--mainPink);
 }
+.highlight {
+            border: 2px solid rgb(0, 179, 255);
+            padding: 2px;
+            border-radius: 4px;
+            background-color: rgba(0, 200, 255, 0.177);
+        }
+
 @media (min-width: 1201px) {
     .button-nav {
         display: flex;
@@ -600,7 +608,7 @@ body {
     color: var(--mainGray);
     font-weight: bold;
     width: 100%;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
     margin: 35px 0px;
@@ -625,6 +633,74 @@ body {
     background-color:var(--nav);
     color: var(--mainPink);
 }
+/* //Animation */
+
+    /* .home {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .show {
+        opacity: 1;
+    }
+    .HP, .home-btn1, .home-img {
+        transform: translateY(100px);
+        opacity: 0;
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+    .animate {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .home-img {
+        transform: translateX(100px);
+    }
+    .home-img .animate {
+        transform: translateX(0);
+    } */
+
+
+     @keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* تطبيق الأنيميشن */
+.home .HPbt .HP .H, .home .HPbt .HP .P {
+    animation: slideUp 1s ease-in-out forwards;
+}
+
+.home .home-img .yoga {
+    animation: slideRight 1s ease-in-out forwards;
+}
+/* .hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+} */
+
+/* //end animation */
 @media (max-width:1200px) {
     .home{
     display: flex;
@@ -645,7 +721,7 @@ body {
     color: var(--mainGray);
     /* font-weight: bold; */
     width: 100%;
-    display: flex
+    display: block
 ;
     align-items: center;
     justify-content: center;
@@ -1005,7 +1081,7 @@ body {
 /* ------------------------------------------end section swiper------------------------------------- */
 /* ------------------------------------------section view------------------------------------- */
 
-.look {
+/* .look {
          display: flex;
          flex-direction: column;
          justify-content: center;
@@ -1035,6 +1111,187 @@ body {
 .look .btn2:hover{
     background-color: var(--mainPink);
     color: var(--nav);
+} */
+
+.look {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         margin-top: 50px;
+         /* margin-bottom: 100px; */
+         padding: 100px 20px;
+}
+.look h3{
+         text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        color: var(--mainGray);
+}
+.look .button-look {
+        margin-top: 20px;
+        padding: 15px 25px;
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--mainPink);
+        background-color: var(--nav);
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        transition: transform ease-in 0.1s , box-shadow ease-in 0.25;
+        box-shadow: 0 2px 15px #FF389C;
+}
+.look .button-look:hover{
+    color: var(--nav);
+        background-color: var(--mainPink);
+}
+
+.look .button-look::before , .look .button-look::after  {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 140%;
+        height: 100%;
+        left: -20%;
+        z-index: -1000;
+        transition: all ease-in-out 0.5s;
+        background-repeat: no-repeat;
+
+        
+
+
+}
+.look .button-look::before ,
+ .look .button-look::after 
+  {
+        display: none;
+        background-image:
+        radial-gradient(circle, #FF389C 20% , transparent 20%),
+        radial-gradient(circle, #FF389C 20% , transparent 20%, transparent 30%),
+        radial-gradient(circle, #FF389C 20% , transparent 20%),
+        radial-gradient(circle, #FF389C 20% , transparent 20%),
+        radial-gradient(circle, #FF389C 10% , transparent 15%, transparent 20%),
+        radial-gradient(circle, #FF389C 20% , transparent 20%),
+        radial-gradient(circle, #FF389C 20% , transparent 20%),
+        radial-gradient(circle, #FF389C 20% , transparent 20%),
+        radial-gradient(circle, #FF389C 20% , transparent 20%);
+        background-size: 10% 10% ,20% 20% ,15% 15% , 20% 20% , 18% 18%, 10% 10% ,15% 15%,10% 10%,18% 18%  ;
+
+}
+.look .button-look::before {
+        top: -75%; 
+}
+.look .button-look::after {
+        bottom:  -75%; 
+}
+
+.look .button-look:active {
+         transform: scale(0.9);
+         background-color: #FF389C;
+         box-shadow: 0 2px 25px #969090;
+}
+
+.look .button-look.animate::before 
+{
+         display: block;
+         animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.look .button-look.animate::after
+{
+         display: block;
+         animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+@keyframes topBubbles {
+         0% {
+                 background-position:
+                  5% 90%,
+                  10% 90%,
+                   10% 90%,
+                    15% 90%,
+                     25% 90%,
+                      25% 90%,
+                       40% 90%,
+                        55% 90%,
+                         70% 90% ;
+         }
+
+          50% {
+                 background-position:
+                  0% 80%,
+                  0% 20%,
+                   1% 40%,
+                    2% 0%,
+                     3% 30%,
+                      2% 50%,
+                       5% 50%,
+                        6% 20%,
+                         9% 30% ;
+         }
+          100% {
+                 background-position:
+                  0% 70%,
+                  0% 10%,
+                   10% 30%,
+                    20% -10%,
+                     30% 20%,
+                      22% 40%,
+                       50% 40%,
+                        65% 10%,
+                         90% 20% ;
+
+                         background-size:
+                         0% 0% , 
+                         0% 0% , 
+                         0% 0% , 
+                         0% 0% , 
+                         0% 0% , 
+                         0% 0%  ;
+         }
+}
+@keyframes  bottomBubbles {
+         0% {
+                 background-position:
+                  10% 10%,
+                  30% 10%,
+                   55% 10%,
+                    70% 10%,
+                     85% 10%,
+                      70% 10%,
+                       70% 0%
+                       ;
+         }
+
+          50% {
+                 background-position:
+                  0% 80%,
+                  20% 80%,
+                   45% 60%,
+                    60% 100%,
+                    75% 70%,
+                      95% 60%,
+                       105% 0%
+                        ;
+         }
+          100% {
+                 background-position:
+                  0% 90%,
+                  20% 90%,
+                   45% 70%,
+                    60% 110%,
+                     75% 80%,
+                      95% 70%,
+                       110% 10%;
+
+                         background-size:
+                         0% 0% , 
+                         0% 0% , 
+                         0% 0% , 
+                         0% 0% , 
+                         0% 0% , 
+                         0% 0%  ;
+         }
 }
 
 
@@ -1057,6 +1314,7 @@ body {
          justify-content: center;
          align-items: center;
          padding: 100px 10px;
+         margin-top: 0px;
 }
 }
 @media (max-width:377px) {
@@ -1500,4 +1758,142 @@ body {
     }
 }
 /* ------------------------------------------end section complete------------------------------------- */
+/* ------------------------------------------section login and register------------------------------------- */
+.login{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 20px;
+     /* margin-top: 500px;
+     margin-bottom: 500px; */
+}
+.login  .details-login {
+      background:rgba(255, 255,255, 0.2);
+      padding: 60px 50px;
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      animation: login 4s linear infinite;
+}
+.login  .details-login::before {
+     content: "";
+     position: absolute;
+     top: -50%;
+     left: -50%;
+     width: 200%;
+     height: 200%;
+     background: linear-gradient(60deg,grey,#969090,gray,var(--mainPink),#969090,grey,#969090);
+     background-size: 400% 400%;
+     z-index: -1;
+     filter: blur(30px);
+     animation: animatioBorder 10s linear infinite ;
+}
+@keyframes animatioBorder {
+         0%{
+                background-position: 0% 50%;
+         }
+         50%{
+                background-position: 100% 50%;
+         }
+         100%{
+                background-position: 0% 50%;
+         }
+}
+@keyframes login{
+         0%{
+                box-shadow: 0 0 15px #FF389C , 0 0 30px #00f2ff66;
+         }
+         25%{ 
+                box-shadow: 0 0 20px #FF389C , 0 0 35px #00f2ff66;
+         }
+         50%{
+                box-shadow: 0 0 25px #FF389C , 0 0 40px #00f2ff66;
+         }
+         75%{
+                box-shadow: 0 0 20px #FF389C , 0 0 35px #00f2ff66;
+         }
+         100%{
+                box-shadow: 0 0 15px #FF389C , 0 0 30px #00f2ff66;
+         }
+}
+.login  .details-login h2 {
+     text-align: center;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     color: black;
+     margin-bottom: 36px;
+     font-size: 28px;
+     text-shadow: 0 0 12px black;
+}
+.login  .details-login  .input-group  {
+    margin-bottom: 36px;
+    position: relative;
+}
+.login  .details-login .input-group input::placeholder{
+     color: black;
+}
+.login  .details-login .input-group input  {
+      width: 100%;
+      padding: 14px 40px ;
+      border:  2px solid #969090;
+     /* border-radius: 12px; */
+      background: transparent;
+      color: black;
+      font-size: 16px;
+      font-weight: 500;
+      transition: 0.3s ;
+}
+.login  .details-login .input-group input:focus {
+     border-color: white;
+     outline: none;
+     box-shadow: 0 0 12px white;
+}
+.login  .details-login .input-group i {
+     position: absolute;
+     left: 16px;
+     top: 50%;
+     transform: translateY(-50%);
+     color: black;
+     font-size: 16px;
+}
+.login  .details-login .btn-login {
+       width: 100%;
+       padding: 16px;
+       border: none;
+       background: black;
+       color: white;
+       font-size: 16px;
+       font-weight: bold;
+       border-radius: 40px;
+       cursor: pointer;
+       box-shadow: 0 0 18px black;
+       transition: 0.3s;     
+}
+.login  .details-login .btn-login:hover {
+      transform: scale(1.03);
+       box-shadow: 0 0 30px black;
+}
+.login  .details-login  .signup-text {
+text-align: center;
+margin-top: 30px;
+margin-bottom: 30px;
+font-size: 16px;
+color: black;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.login  .details-login  .signup-text a {
+     color: white;
+     margin-left: 5px;
+     text-decoration: none;
+}
+.login  .details-login  .signup-text a:hover {
+     text-decoration: underline;
+} 
+.items-center {
+    align-items: center;
+    margin-bottom: 30px;
+}
+/* ------------------------------------------end section login and register------------------------------------- */
+
 

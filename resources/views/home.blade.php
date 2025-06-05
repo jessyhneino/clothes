@@ -210,7 +210,7 @@ HOME
             just press the button and discover what awaits you!"
             </h3>
             <a class="look-a" href="/cards">
-                <button class="btn2">View The Product</button> 
+                <button class="button-look">View The Product</button> 
             </a>
         </div>
 <!-- ------------------------------------------end section view-------------------------------------  -->
@@ -226,14 +226,14 @@ HOME
                     <h2 class="map-h2">Visit one of our agency locations or contact us today </h2>
                     <h3 class="map-h3">Head Office</h3>
                     <div class="inform">
-                        <p class="map-p">  <i  class="fa-solid fa-flag"></i>    56 Glassford Street Glassgow GI IUL New York</p>
+                        <p class="map-p">  <i  class="fa-solid fa-flag"></i>    56 Glassford Street Glassgow GI IUL Berlin</p>
                         <p class="map-p">   <i  class="fa-solid fa-message"></i>    contact@lavender.com</p>
                         <p class="map-p">  <i  class="fa-solid fa-phone"></i>    contact@lavender.com</p>
                         <p class="map-p"> <i  class="fa-solid fa-clock"></i>    Monday to Saturday :9.00am to 16pm</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
 <!-- ------------------------------------------end section map-------------------------------------  -->
 <!--         
         <h1 class="text-3xl font-bold underline bg-blue-300 w-32 h-32">

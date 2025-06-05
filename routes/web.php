@@ -15,6 +15,12 @@ Route::get('/cards', function () {
 Route::get('/complete', function () {
     return view('complete');
 });
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/register', function () {
+    return view('register');
+});
 
 
 
