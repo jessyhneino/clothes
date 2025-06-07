@@ -1157,10 +1157,6 @@ body {
         z-index: -1000;
         transition: all ease-in-out 0.5s;
         background-repeat: no-repeat;
-
-        
-
-
 }
 .look .button-look::before ,
  .look .button-look::after 
@@ -1293,8 +1289,6 @@ body {
                          0% 0%  ;
          }
 }
-
-
 @media (max-width:1464px) {
         .look .look-h3 {
          text-align: center;
@@ -1476,18 +1470,18 @@ body {
 }
 .shose .box .card .product-text .products-star {
         color: orange !important;
-        /* margin-bottom: 19px !important; */
+        margin-bottom: 25px !important;
         cursor: pointer;
 
 }
 .shose .box .card .product-text .btn3{
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 15px 20px;
     color: white;
     background: linear-gradient(to right , var(--mainPink), #91919191);
     border: 1px solid  #969090;
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 10px !important;
 }
 .shose .box .card .product-text .btn3:hover{
 
@@ -1495,6 +1489,11 @@ body {
     background:  #91919191 !important;
   
 }
+
+/* .shose .box .card .product-text .products-heart{
+    margin-top: 25px;
+} */
+
 .head-shose {
       text-align: center;
      color: #FF389C;

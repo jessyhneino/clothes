@@ -1,9 +1,13 @@
 
+// ********************humberger ***************
+
 function toggleMenu() {
     const nav = document.querySelector('.nav-half');
     nav.classList.toggle('active');
 }
+// ********************end humberger ***************
 
+// ********************swiper ***************
 var swiper = new Swiper(".cloth-slider", {
   spaceBetween: 20,
   grabCursor:true,
@@ -16,7 +20,6 @@ var swiper = new Swiper(".cloth-slider", {
   el: ".swiper-pagination",
   clickable:true,
   }, 
- 
   breakpoints: {
     540: {
       slidesPerView: 1,
@@ -28,11 +31,10 @@ var swiper = new Swiper(".cloth-slider", {
       slidesPerView: 3,
     },
   },
-
-
 });
+// ********************end swiper ***************
 
-// clock
+// ********************clock ***************
 setInterval(()=>{
 let hours = document.getElementById("hours");
 let minutes = document.getElementById("minutes");
@@ -43,13 +45,9 @@ let hh=document.getElementById("hh");
 let mm=document.getElementById("mm");
 let ss=document.getElementById("ss");
 
-
 let hr_dot=document.querySelector(".hr_dot")
 let min_dot=document.querySelector(".min_dot")
 let sec_dot=document.querySelector(".sec_dot")
-
-
-
 
 let h = new Date().getHours();
 let m = new Date().getMinutes();
@@ -60,17 +58,14 @@ if(h > 12)
 {
     h = h - 12;
 }
-
 h = (h < 10) ? "0" + h : h;
 m = (m < 10) ? "0" + m : m;
 s = (s < 10) ? "0" + s : s;
-
 
 hours.innerHTML= h + "<br><span>Hours</span>";
 minutes.innerHTML= m + "<br><span>Minutes</span>";
 seconds.innerHTML= s + "<br><span>Seconds</span>";
 ampm.innerHTML = am;
-
 
 hh.style.strokeDashoffset=440-(440*h) /12;
 mm.style.strokeDashoffset=440-(440*m) /60;
@@ -80,48 +75,9 @@ hr_dot.style.transform = `rotate(${ h * 30 }deg)`;
 min_dot.style.transform = `rotate(${ m * 6 }deg)`;
 sec_dot.style.transform = `rotate(${s * 6}deg)`;
 
-
 })
 
-
-// end clock
-
-function animateLetters() {
-    const heading = document.querySelector(".head-shose");
-    const text = heading.textContent;
-    heading.innerHTML = ""; 
-
-    
-    text.split("").forEach((char, index) => {
-        const span = document.createElement("span");
-        span.textContent = char;
-        span.classList.add("letter");
-        heading.appendChild(span);
-
-       
-        setTimeout(() => {
-            span.style.opacity = 1;
-            span.style.transform = "translateY(0)";
-        }, index * 100); 
-    });
-
-
-    setTimeout(() => {
-        const letters = document.querySelectorAll(".letter");
-        letters.forEach((span, index) => {
-            setTimeout(() => {
-                span.style.opacity = 0;
-                span.style.transform = "translateY(20px)";
-            }, index * 100);
-        });
-    }, text.length * 100 + 1000); 
-
-   
-    setTimeout(animateLetters, text.length * 100 + 2000);
-}
-
-document.addEventListener("DOMContentLoaded", animateLetters);
-
+// ********************end clock ***************
 
 // ********************HOME ***************
 
@@ -167,6 +123,8 @@ document.addEventListener("DOMContentLoaded", animateLetters);
 
 // ******************** END HOME ***************
 
+// ******************** search ***************
+
 function performSearch() {
             var query = document.getElementById("searchInput").value.trim();
             var elements = document.querySelectorAll(".container-new");
@@ -175,7 +133,6 @@ function performSearch() {
                 element.innerHTML = element.dataset.originalText; 
             });
 
-            
             if (query === "") return; // لا شيء للبحث عنه
 
             elements.forEach(function(element) {
@@ -191,4 +148,66 @@ function performSearch() {
                 element.dataset.originalText = element.innerHTML; 
             });
         });
+// ******************** END search ***************
+// ********************cards ***************
+function animateLetters() {
+    const heading = document.querySelector(".head-shose");
+    const text = heading.textContent;
+    heading.innerHTML = ""; 
+
+    text.split("").forEach((char, index) => {
+        const span = document.createElement("span");
+        span.textContent = char;
+        span.classList.add("letter");
+        heading.appendChild(span);
+
+        setTimeout(() => {
+            span.style.opacity = 1;
+            span.style.transform = "translateY(0)";
+        }, index * 100); 
+    });
+
+    setTimeout(() => {
+        const letters = document.querySelectorAll(".letter");
+        letters.forEach((span, index) => {
+            setTimeout(() => {
+                span.style.opacity = 0;
+                span.style.transform = "translateY(20px)";
+            }, index * 100);
+        });
+    }, text.length * 100 + 1000); 
+
+    setTimeout(animateLetters, text.length * 100 + 2000);
+}
+
+document.addEventListener("DOMContentLoaded", animateLetters);
+
+// ******************** END cards ***************
+
+// ********************button ***************
+
+var animateButton = function(e) {
+    e.preventDefault(); 
+    var link = e.target.parentElement.href;
+
+    e.target.classList.add("animate");
+
+    setTimeout(() => {
+        window.location.href = link; 
+    }, 500); 
+
+    setTimeout(() => {
+        e.target.classList.remove("animate");
+    }, 500); 
+};
+
+var buttonLook = document.getElementsByClassName("button-look");
+for (var i = 0; i < buttonLook.length ; i++) {
+    buttonLook[i].addEventListener("click", animateButton, false);
+}
+
+// ********************end button ***************
+
+
+
 

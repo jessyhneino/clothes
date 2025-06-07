@@ -1,14 +1,13 @@
 <?php
-
+use App\Http\Controllers\ClothesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/home',[ClothesController::class,'home']);
+
 Route::get('/cards', function () {
     return view('cards');
 });
@@ -21,12 +20,10 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
-
-
-
-
-
-
+// Route::get('/create',[ClothesController::class,'create']);
+// Route::get('/update/{id}',[ClothesController::class,'update']);
+// Route::get('/edit/{id}',[ClothesController::class,'edit']);
+// Route::get('/delete/{id}',[ClothesController::class,'delete']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

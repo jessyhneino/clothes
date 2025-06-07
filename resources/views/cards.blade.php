@@ -8,9 +8,10 @@ PRODUCTS
 
 <!-- ------------------------------------------ section cards-------------------------------------  -->
  
-    <form>
+    <form id="like-form" method="POST">
+        @csrf
         <h1 class="head-shose"  > Latest Products </h1>
-        <div  class="shose"  id="shose">
+        <div  class="shose">
             <div class="box">
                 <div class="card">
                         <!-- <div class="small-card">
@@ -30,9 +31,13 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product1"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <!-- <a href="/complete">
+                            <button class="btn3">Show The Product</button> 
+                        </a> -->
+                        <a class="btn3" href="/complete">Show The Product</a>
+
+
+
                     </div>
                 </div>
                 <div class="card">
@@ -53,9 +58,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product2"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -77,9 +80,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                             <i  class="fa-regular fa-star"></i>    
                         </div>
-                        <a href="#details-product3"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -100,9 +101,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product4"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -123,9 +122,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product5"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -146,9 +143,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product6"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -169,9 +164,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product7"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -192,9 +185,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product8"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -216,9 +207,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product9"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -239,9 +228,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product10"  >
-                            <button class="btn3">Add To Cart</button>
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -263,9 +250,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product11"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -287,9 +272,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product12"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -310,9 +293,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product13"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -333,9 +314,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product14"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -356,9 +335,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product15"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -379,9 +356,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product16"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -402,9 +377,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product17"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -425,9 +398,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product18"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -448,9 +419,7 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product19"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
@@ -471,9 +440,8 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product20"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
+                        
                     </div>
                 </div>
             </div>
