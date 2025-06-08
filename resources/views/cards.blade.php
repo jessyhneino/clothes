@@ -8,16 +8,12 @@ PRODUCTS
 
 <!-- ------------------------------------------ section cards-------------------------------------  -->
  
-    <form id="like-form" method="POST">
+    <form id="like-form" method="POST" action="{{route('insert')}}">
         @csrf
         <h1 class="head-shose"  > Latest Products </h1>
         <div  class="shose">
             <div class="box">
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -35,9 +31,6 @@ PRODUCTS
                             <button class="btn3">Show The Product</button> 
                         </a> -->
                         <a class="btn3" href="/complete">Show The Product</a>
-
-
-
                     </div>
                 </div>
                 <div class="card">
@@ -444,6 +437,28 @@ PRODUCTS
                         
                     </div>
                 </div>
+                 @foreach($products as $product)
+                    <div class="card">
+                        <div class="image">
+                            <img src="{{asset($product->image)}}">
+                        </div>
+                        <div class="product-text">
+                            <h2>{{$product->name_product}}</h2>
+                            <h3>${{$product->price}}</h3>
+                            <div class="products-star">
+                                <i  class="fa-solid fa-star"></i>
+                                <i  class="fa-solid fa-star"></i>
+                                <i  class="fa-solid fa-star"></i>
+                                <i  class="fa-solid fa-star-half-stroke"></i>
+                                <i  class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <!-- <a href="/complete">
+                                <button class="btn3">Show The Product</button> 
+                            </a> -->
+                            <a class="btn3" href="/complete">Show The Product</a>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </form>

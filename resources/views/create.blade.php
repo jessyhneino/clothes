@@ -9,7 +9,7 @@ PRODUCTS
 
 
 <div class="create">
-    <form method="POST" enctype="multipart/form-data" >
+    <form method="POST" action="{{route('insert')}}" enctype="multipart/form-data" >
         @csrf
         <div class="mb-3 create-input">
             <label class="create-label">Name Product</label>

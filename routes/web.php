@@ -6,11 +6,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home',[ClothesController::class,'home']);
+Route::get('/home',[ClothesController::class,'home'])->name('home');
 
-Route::get('/cards', function () {
-    return view('cards');
-});
 Route::get('/complete', function () {
     return view('complete');
 });
@@ -20,7 +17,11 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
-Route::get('/create',[ClothesController::class,'create']);
+
+Route::get('/cards',[ClothesController::class,'cards'])->name('cards');
+Route::get('/create',[ClothesController::class,'create'])->name('create');
+Route::post('/insert',[ClothesController::class,'insert'])->name('insert');
+
 // Route::get('/update/{id}',[ClothesController::class,'update']);
 // Route::get('/edit/{id}',[ClothesController::class,'edit']);
 // Route::get('/delete/{id}',[ClothesController::class,'delete']);

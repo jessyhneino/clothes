@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('image');
             $table->longText('description');
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            // $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->nullable();
             $table->integer('likes')->default(0);
             $table->timestamps();
         });
