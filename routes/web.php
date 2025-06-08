@@ -20,7 +20,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
-// Route::get('/create',[ClothesController::class,'create']);
+Route::get('/create',[ClothesController::class,'create']);
 // Route::get('/update/{id}',[ClothesController::class,'update']);
 // Route::get('/edit/{id}',[ClothesController::class,'edit']);
 // Route::get('/delete/{id}',[ClothesController::class,'delete']);
