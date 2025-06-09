@@ -23,6 +23,9 @@ Route::get('/create',[ClothesController::class,'create'])->name('create');
 // Route::get('/edit/{id}',[ClothesController::class,'edit'])->name('edit');
 Route::get('/{id}/edit', [ClothesController::class, 'edit'])->name('edit');
 Route::post('/insert',[ClothesController::class,'insert'])->name('insert');
+Route::PUT('/{id}/update',[ClothesController::class,'update'])->name('update');
+Route::get('/{id}/delete',[ClothesController::class,'delete'])->name('delete');
+
 
 // Route::get('/update/{id}',[ClothesController::class,'update']);
 // Route::get('/edit/{id}',[ClothesController::class,'edit']);

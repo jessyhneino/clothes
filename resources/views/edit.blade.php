@@ -9,8 +9,9 @@ EDIT
 
 
 <div class="create">
-    <form method="POST" action="{{route('insert')}}" enctype="multipart/form-data" >
+    <form method="POST" action="{{route('update',$product->id)}}" enctype="multipart/form-data" >
         @csrf
+        @method('PUT')
         <div class="mb-3 create-input">
             <label class="create-label">Name Product</label>
             <input name="name_product" type="text" class="create-control" value="{{$product->name_product}}">

@@ -37,7 +37,7 @@ PRODUCTS
                             <a class="btn3" href="/complete">Show The Product</a>
                             <div class="e-d">
                                 <a class="b-edit" href="{{route('edit', ['id' => $product->id])}}">Edit</a>
-                                <a class="b-delete" href="">Delete</a>
+                                <a class="b-delete" href="{{route('delete', ['id' => $product->id])}}">Delete</a>
                             </div>
                         </div>
                     </div>

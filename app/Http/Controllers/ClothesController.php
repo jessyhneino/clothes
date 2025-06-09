@@ -44,8 +44,26 @@ class ClothesController extends Controller
             'image'=>$request->image,
             'description'=>$request->description,
         ]);
-        return response('تم');
+        return redirect()->route('cards');
     }
+
+    public function update(Request $request, $id){
+        DB::table('categories')->where('id',$id)->update([
+            'name_product'=>$request->name_product,
+            'price'=>$request->price,
+            'image'=>$request->image,
+            'description'=>$request->description,
+        ]);
+        // return response('تم');
+        return redirect()->route('cards');
+    }
+
+    public function delete($id){
+        DB::table('categories')->where('id',$id)->delete();
+        return redirect()->route('cards');
+
+    }
+
 }
 
 
