@@ -24,6 +24,11 @@ class ClothesController extends Controller
         return view('create');
     }
 
+    public function edit($id){
+        $product = DB::table('categories')->where('id',$id)->first();
+        return view('edit', compact('product'));
+    }
+
     public function insert(Request $request){
 
         // $file_extension = $request->image->getClientOriginalExtension();

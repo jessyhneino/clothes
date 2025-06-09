@@ -20,6 +20,8 @@ Route::get('/register', function () {
 
 Route::get('/cards',[ClothesController::class,'cards'])->name('cards');
 Route::get('/create',[ClothesController::class,'create'])->name('create');
+// Route::get('/edit/{id}',[ClothesController::class,'edit'])->name('edit');
+Route::get('/{id}/edit', [ClothesController::class, 'edit'])->name('edit');
 Route::post('/insert',[ClothesController::class,'insert'])->name('insert');
 
 // Route::get('/update/{id}',[ClothesController::class,'update']);

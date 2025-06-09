@@ -1388,7 +1388,27 @@ body {
 
 /* ------------------------------------------section cards------------------------------------- */
 
-
+.btn-create{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.btn-create .a-create{
+    border: 1px solid var(--mainPink);
+    background-color: var(--mainPink);
+    color: var(--nav);
+    text-align: center;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.btn-create .a-create:hover{
+    background-color: var(--nav);
+    color: var(--mainPink);
+}
 .shose{
        width: 100%;
        /* height: 140vh; */
@@ -1408,7 +1428,7 @@ body {
 
 .shose .box .card {
        width: 290px;
-       height:440px;
+       height:475px;
        box-shadow: 0 0 8px var(--mainPink);
        border-radius: 5px;
        text-align: center;
@@ -1488,6 +1508,44 @@ body {
     color: var(--mainPink) !important;
     background:  #91919191 !important;
   
+}
+.shose .box .card .product-text .e-d{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.shose .box .card .product-text .e-d .b-edit{
+    text-decoration: none;
+    padding: 10px 15px;
+    color: white;
+    background: linear-gradient(to right , var(--mainPink), #91919191);
+    border: 1px solid  #969090;
+    font-size: 20px;
+    margin-top: 10px !important;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.shose .box .card .product-text .e-d .b-edit:hover{
+    color: var(--mainPink) !important;
+    background:  #91919191 !important;
+}
+.shose .box .card .product-text .e-d .b-delete{
+    text-decoration: none;
+    padding: 10px 15px;
+    color: white;
+    background: linear-gradient(to right , var(--mainPink), #91919191);
+    border: 1px solid  #969090;
+    font-size: 20px;
+    margin-top: 10px !important;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.shose .box .card .product-text .e-d .b-delete:hover{
+    color: var(--mainPink) !important;
+    background:  #91919191 !important;
 }
 
 /* .shose .box .card .product-text .products-heart{
@@ -1613,7 +1671,8 @@ body {
     font-size: 20px;
     background:linear-gradient(to right , hotpink, #91919191);
     border-radius: 10px;
-    border: 2px solid var(--mainPink); 
+    border: 2px solid var(--mainPink);
+    font-weight: bold; 
 }
 .details-product1 .detail-pro1 .div-select .select-pro1 option{
     color: var(--mainGray);
@@ -1629,6 +1688,39 @@ body {
     font-weight: bold;
     color: var(--mainPink);
     font-size: 30px;
+}
+.detail-pro1 .edit-delete{
+  width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+.detail-pro1 .edit-delete .btn-edit{
+    border: 1px solid var(--mainPink);
+    background: linear-gradient(to right , hotpink, #91919191);
+    color: var(--nav);
+    text-align: center;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.detail-pro1 .edit-delete .btn-delete{
+    border: 1px solid var(--mainPink);
+    background: linear-gradient(to right , hotpink, #91919191);
+    color: var(--nav);
+    text-align: center;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.detail-pro1 .edit-delete .btn-edit:hover{
+    background: var(--mainPink)
+}
+.detail-pro1 .edit-delete .btn-delete:hover{
+    background: var(--mainPink)
 }
 /* //media for details */
 @media (max-width:1400px) {

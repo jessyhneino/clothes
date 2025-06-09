@@ -35,6 +35,10 @@ HOME
                     <h3 class="h3-pro1">Product Details :</h3>
                     <p class="p-pro2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, earum?</p>
                 </div>
+                <div class="edit-delete">
+                    <!-- <a class="btn-edit" href="{{route('edit, $product->id')}}">Edit</a>
+                    <a class="btn-delete">Delete</a> -->
+                </div>
             </div>                   
         </div>
     </form>
