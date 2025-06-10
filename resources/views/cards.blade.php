@@ -12,7 +12,7 @@ PRODUCTS
         @csrf
         <h1 class="head-shose"  > Latest Products </h1>
         <div class="btn-create">
-            <a class="a-create" href="" role="button">Create</a>
+            <a class="a-create" href="/create" role="button">Create</a>
         </div>
         <div  class="shose">
             <div class="box">
@@ -34,6 +34,12 @@ PRODUCTS
                             <!-- <a href="/complete">
                                 <button class="btn3">Show The Product</button> 
                             </a> -->
+                            <div class="hart">
+                                <i class="fa-regular fa-heart like-btn" data-id="{{ $product->id }}" data-liked="false"></i>
+                                <span class="likes-count">{{ $product->likes }}</span>
+                            </div>
+
+
                             <a class="btn3" href="/complete">Show The Product</a>
                             <div class="e-d">
                                 <a class="b-edit" href="{{route('edit', ['id' => $product->id])}}">Edit</a>

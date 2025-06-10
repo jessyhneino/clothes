@@ -1428,7 +1428,7 @@ body {
 
 .shose .box .card {
        width: 290px;
-       height:475px;
+       height:490px;
        box-shadow: 0 0 8px var(--mainPink);
        border-radius: 5px;
        text-align: center;
@@ -1484,13 +1484,13 @@ body {
 
 }
 .shose .box .card .product-text h3 {
-    margin: 15px 0 15px 0;
+    margin: 5px 0 5px 0;
     font-weight: 700;
     font-size: 35px;
 }
 .shose .box .card .product-text .products-star {
         color: orange !important;
-        margin-bottom: 25px !important;
+        margin-bottom: 5px !important;
         cursor: pointer;
 
 }
@@ -1548,9 +1548,10 @@ body {
     background:  #91919191 !important;
 }
 
-/* .shose .box .card .product-text .products-heart{
-    margin-top: 25px;
-} */
+.shose .box .card .product-text .hart{
+    margin-bottom: 25px;
+    font-size: 30px;
+}
 
 .head-shose {
       text-align: center;

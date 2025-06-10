@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 
 class ClothesController extends Controller
@@ -16,7 +17,8 @@ class ClothesController extends Controller
     // }
 
     public function cards(){
-        $products = DB::table('categories')->get();
+        // $products = DB::table('categories')->get();
+        $products = Category::all();
         return view('cards', compact('products'));
     }
 
@@ -31,6 +33,21 @@ class ClothesController extends Controller
 
     public function insert(Request $request){
 
+        $file_extension = $request->image->getClientOriginalExtension();
+$file_name = time().'.'.$file_extension;
+$path = public_path('images'); // تحديد المسار داخل public
+$request->image->move($path, $file_name);
+$image_path = 'images/'.$file_name;
+
+Category::create([
+    'name_product' => $request->name_product,
+    'price' => $request->price,
+    'image' => $image_path, // حفظ مسار الصورة
+    'description' => $request->description,
+    'likes' => $request->likes,
+]);
+
+
         // $file_extension = $request->image->getClientOriginalExtension();
         // $file_name = time().'.'.$file_extension;
         // $path = 'images';
@@ -38,12 +55,26 @@ class ClothesController extends Controller
         // $file_name='images/'.$file_name;
 
 
-        DB::table('categories')->insert([
-            'name_product'=>$request->name_product,
-            'price'=>$request->price,
-            'image'=>$request->image,
-            'description'=>$request->description,
-        ]);
+        // DB::table('categories')->insert([
+        //     'name_product'=>$request->name_product,
+        //     'price'=>$request->price,
+        //     'image'=>$request->image,
+        //     'description'=>$request->description,
+        // ]);
+
+        // $product = new Category();
+        // $product->name_product = $request->name_product;
+        // $product->price = $request->price;
+        // $product->image = $request->image;
+        // $product->description = $request->description;
+        // $product->save();
+
+        // Category::create([
+        //     'name_product' => $request->name_product,
+        //     'price' => $request->price,
+        //     'image' => $request->image,
+        //     'description' => $request->description,
+        // ]);
         return redirect()->route('cards');
     }
 
@@ -53,6 +84,7 @@ class ClothesController extends Controller
             'price'=>$request->price,
             'image'=>$request->image,
             'description'=>$request->description,
+            'likes'=>$request->likes,
         ]);
         // return response('تم');
         return redirect()->route('cards');
@@ -64,6 +96,20 @@ class ClothesController extends Controller
 
     }
 
+
+public function toggleLike(Request $request, $id)
+{
+    $category = Category::findOrFail($id);
+
+    if ($request->liked == 'true') {
+        $category->increment('likes'); // زيادة عدد الإعجابات
+    } else {
+        $category->decrement('likes'); // إنقاص عدد الإعجابات
+    }
+
+    return response()->json(['likes' => $category->likes]);
 }
 
 
+
+}

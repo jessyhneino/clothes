@@ -27,6 +27,8 @@ Route::PUT('/{id}/update',[ClothesController::class,'update'])->name('update');
 Route::get('/{id}/delete',[ClothesController::class,'delete'])->name('delete');
 
 
+Route::post('/toggle-like/{id}', [CategoryController::class, 'toggleLike'])->name('category.toggleLike');
+
 // Route::get('/update/{id}',[ClothesController::class,'update']);
 // Route::get('/edit/{id}',[ClothesController::class,'edit']);
 // Route::get('/delete/{id}',[ClothesController::class,'delete']);

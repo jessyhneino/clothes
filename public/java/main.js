@@ -208,6 +208,30 @@ for (var i = 0; i < buttonLook.length ; i++) {
 
 // ********************end button ***************
 
+   
+
+    $(document).ready(function(){
+        
+        $('.like-btn').click(function(){
+            var categoryId = $(this).data('id');
+            var likeCount = $(this).siblings('.likes-count');
+            var isLiked = $(this).data('liked') === "true"; // التحقق من حالة الإعجاب الحالية
+            var newLikedState = isLiked ? "false" : "true";
+            var newHeartIcon = isLiked ? "fa-regular fa-heart" : "fa-solid fa-heart"; // تغيير الأيقونة
+
+            $.post('/toggle-like/' + categoryId, {
+                _token: '{{ csrf_token() }}',
+                liked: newLikedState
+            }, function(data){
+                likeCount.text(data.likes); // تعديل المفتاح هنا أيضًا
+            });
+
+            $(this).data('liked', newLikedState);
+            $(this).removeClass().addClass(newHeartIcon);
+        });
+    });
+
+
 
 
 
