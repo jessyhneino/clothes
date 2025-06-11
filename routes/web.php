@@ -8,9 +8,7 @@ Route::get('/', function () {
 });
 Route::get('/home',[ClothesController::class,'home'])->name('home');
 
-Route::get('/complete', function () {
-    return view('complete');
-});
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -19,19 +17,17 @@ Route::get('/register', function () {
 });
 
 Route::get('/cards',[ClothesController::class,'cards'])->name('cards');
+Route::get('/{id}/complete', [ClothesController::class, 'complete'])->name('complete');
 Route::get('/create',[ClothesController::class,'create'])->name('create');
-// Route::get('/edit/{id}',[ClothesController::class,'edit'])->name('edit');
 Route::get('/{id}/edit', [ClothesController::class, 'edit'])->name('edit');
 Route::post('/insert',[ClothesController::class,'insert'])->name('insert');
 Route::PUT('/{id}/update',[ClothesController::class,'update'])->name('update');
 Route::get('/{id}/delete',[ClothesController::class,'delete'])->name('delete');
 
+// Route::post('/toggle-like', [ClothesController::class, 'toggleLike'])->name('toggle.like');
 
-Route::post('/toggle-like/{id}', [CategoryController::class, 'toggleLike'])->name('category.toggleLike');
 
-// Route::get('/update/{id}',[ClothesController::class,'update']);
-// Route::get('/edit/{id}',[ClothesController::class,'edit']);
-// Route::get('/delete/{id}',[ClothesController::class,'delete']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

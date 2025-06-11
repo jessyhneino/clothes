@@ -208,28 +208,31 @@ for (var i = 0; i < buttonLook.length ; i++) {
 
 // ********************end button ***************
 
-   
+// $(document).ready(function () {
+//     $(".like-btn").click(function () {
+//         let heart = $(this);
+//         let productId = heart.data("id");
+//         let isLiked = heart.hasClass("fa-solid");
 
-    $(document).ready(function(){
-        
-        $('.like-btn').click(function(){
-            var categoryId = $(this).data('id');
-            var likeCount = $(this).siblings('.likes-count');
-            var isLiked = $(this).data('liked') === "true"; // التحقق من حالة الإعجاب الحالية
-            var newLikedState = isLiked ? "false" : "true";
-            var newHeartIcon = isLiked ? "fa-regular fa-heart" : "fa-solid fa-heart"; // تغيير الأيقونة
-
-            $.post('/toggle-like/' + categoryId, {
-                _token: '{{ csrf_token() }}',
-                liked: newLikedState
-            }, function(data){
-                likeCount.text(data.likes); // تعديل المفتاح هنا أيضًا
-            });
-
-            $(this).data('liked', newLikedState);
-            $(this).removeClass().addClass(newHeartIcon);
-        });
-    });
+//         $.ajax({
+//             url: "/toggle-like",
+//             type: "POST",
+//             data: {
+//                 product_id: productId,
+//                 _token: "{{ csrf_token() }}"
+//             },
+//             success: function (response) {
+//                 $("#likes-count-" + productId).text(response.likes);
+                
+//                 if (isLiked) {
+//                     heart.removeClass("fa-solid").addClass("fa-regular");
+//                 } else {
+//                     heart.removeClass("fa-regular").addClass("fa-solid");
+//                 }
+//             }
+//         });
+//     });
+// });
 
 
 

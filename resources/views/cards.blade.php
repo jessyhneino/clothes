@@ -31,16 +31,11 @@ PRODUCTS
                                 <i  class="fa-solid fa-star-half-stroke"></i>
                                 <i  class="fa-solid fa-star-half-stroke"></i>
                             </div>
-                            <!-- <a href="/complete">
-                                <button class="btn3">Show The Product</button> 
-                            </a> -->
                             <div class="hart">
                                 <i class="fa-regular fa-heart like-btn" data-id="{{ $product->id }}" data-liked="false"></i>
-                                <span class="likes-count">{{ $product->likes }}</span>
+                                <span class="likes-count" id="likes-count-{{ $product->id }}">{{ $product->likes }}</span>
                             </div>
-
-
-                            <a class="btn3" href="/complete">Show The Product</a>
+                            <a class="btn3" href="{{route('complete', ['id' => $product->id])}}">Show The Product</a>
                             <div class="e-d">
                                 <a class="b-edit" href="{{route('edit', ['id' => $product->id])}}">Edit</a>
                                 <a class="b-delete" href="{{route('delete', ['id' => $product->id])}}">Delete</a>

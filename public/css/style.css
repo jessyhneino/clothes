@@ -1548,10 +1548,29 @@ body {
     background:  #91919191 !important;
 }
 
-.shose .box .card .product-text .hart{
+/* .shose .box .card .product-text .hart{
+    margin-bottom: 25px;
+    font-size: 30px;
+} */
+ .hart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
     margin-bottom: 25px;
     font-size: 30px;
 }
+
+.hart i {
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.hart i.fa-solid {
+    color: red;
+}
+
 
 .head-shose {
       text-align: center;

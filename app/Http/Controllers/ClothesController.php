@@ -22,6 +22,16 @@ class ClothesController extends Controller
         return view('cards', compact('products'));
     }
 
+    public function complete($id){
+        // $product = Category::all();
+        // return view('complete',compact('articls'));
+
+        $product = Category::find($id);
+        
+        return view('complete' , compact('product'));
+        
+    }  
+
     public function create(){
         return view('create');
     }
@@ -34,10 +44,10 @@ class ClothesController extends Controller
     public function insert(Request $request){
 
         $file_extension = $request->image->getClientOriginalExtension();
-$file_name = time().'.'.$file_extension;
-$path = public_path('images'); // تحديد المسار داخل public
-$request->image->move($path, $file_name);
-$image_path = 'images/'.$file_name;
+        $file_name = time().'.'.$file_extension;
+        $path = public_path('images'); // تحديد المسار داخل public
+        $request->image->move($path, $file_name);
+        $image_path = 'images/'.$file_name;
 
 Category::create([
     'name_product' => $request->name_product,
@@ -79,10 +89,16 @@ Category::create([
     }
 
     public function update(Request $request, $id){
+        $file_extension = $request->image->getClientOriginalExtension();
+        $file_name = time().'.'.$file_extension;
+        $path = public_path('images'); // تحديد المسار داخل public
+        $request->image->move($path, $file_name);
+        $image_path = 'images/'.$file_name;
+
         DB::table('categories')->where('id',$id)->update([
             'name_product'=>$request->name_product,
             'price'=>$request->price,
-            'image'=>$request->image,
+            'image'=>$request->$image_path,
             'description'=>$request->description,
             'likes'=>$request->likes,
         ]);
@@ -96,19 +112,29 @@ Category::create([
 
     }
 
+    // public function toggleLike(Request $request)
+    // {
+    //     $category = Category::findOrFail($request->product_id);
 
-public function toggleLike(Request $request, $id)
-{
-    $category = Category::findOrFail($id);
+    //     // تحقق مما إذا كان المستخدم قد أعجب بالفعل
+    //     $liked = session()->get('liked_products', []);
 
-    if ($request->liked == 'true') {
-        $category->increment('likes'); // زيادة عدد الإعجابات
-    } else {
-        $category->decrement('likes'); // إنقاص عدد الإعجابات
-    }
+    //     if (in_array($category->id, $liked)) {
+    //         // إنقاص الإعجابات
+    //         $category->likes--;
+    //         $liked = array_diff($liked, [$category->id]); // إزالة المنتج من قائمة الإعجابات
+    //     } else {
 
-    return response()->json(['likes' => $category->likes]);
-}
+    //         // زيادة الإعجابات
+    //         $category->likes++;
+    //         $liked[] = $category->id;
+    //     }
+
+    //     session()->put('liked_products', $liked);
+    //     $category->save();
+
+    //     return response()->json(['likes' => $category->likes]);
+    // }
 
 
 
