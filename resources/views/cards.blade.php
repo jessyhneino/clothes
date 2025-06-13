@@ -12,7 +12,9 @@ PRODUCTS
         @csrf
         <h1 class="head-shose"  > Latest Products </h1>
         <div class="btn-create">
-            <a class="a-create" href="/create" role="button">Create</a>
+            @if(Auth::check() && Auth::user()->id == 2)
+                <a class="a-create" href="/create" role="button">Create</a>
+            @endif
         </div>
         <div  class="shose">
             <div class="box">
@@ -36,10 +38,13 @@ PRODUCTS
                                 <span class="likes-count" id="likes-count-{{ $product->id }}">{{ $product->likes }}</span>
                             </div>
                             <a class="btn3" href="{{route('complete', ['id' => $product->id])}}">Show The Product</a>
+                     @if(Auth::check() && Auth::user()->id == 2)
+
                             <div class="e-d">
                                 <a class="b-edit" href="{{route('edit', ['id' => $product->id])}}">Edit</a>
                                 <a class="b-delete" href="{{route('delete', ['id' => $product->id])}}">Delete</a>
                             </div>
+                            @endif
                         </div>
                     </div>
                 @endforeach

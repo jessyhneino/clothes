@@ -37,7 +37,8 @@ class ClothesController extends Controller
     }
 
     public function edit($id){
-        $product = DB::table('categories')->where('id',$id)->first();
+        // $product = DB::table('categories')->where('id',$id)->first();
+        $product = Category::findorFail($id);
         return view('edit', compact('product'));
     }
 
@@ -54,7 +55,8 @@ Category::create([
     'price' => $request->price,
     'image' => $image_path, // حفظ مسار الصورة
     'description' => $request->description,
-    'likes' => $request->likes,
+    // 'likes' => $request->likes,
+    'user_id'=> auth()->id(),
 ]);
 
 
@@ -95,14 +97,19 @@ Category::create([
         $request->image->move($path, $file_name);
         $image_path = 'images/'.$file_name;
 
-        DB::table('categories')->where('id',$id)->update([
+        // DB::table('categories')->where('id',$id)->update([
+        //     'name_product'=>$request->name_product,
+        //     'price'=>$request->price,
+        //     'image'=>$image_path,
+        //     'description'=>$request->description,
+        // ]);
+        $product = Category::findorFail($id);
+        $product->update([
             'name_product'=>$request->name_product,
             'price'=>$request->price,
-            'image'=>$request->$image_path,
+            'image'=>$image_path,
             'description'=>$request->description,
-            'likes'=>$request->likes,
         ]);
-        // return response('تم');
         return redirect()->route('cards');
     }
 
