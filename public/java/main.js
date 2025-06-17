@@ -208,31 +208,73 @@ for (var i = 0; i < buttonLook.length ; i++) {
 
 // ********************end button ***************
 
-// $(document).ready(function () {
-//     $(".like-btn").click(function () {
-//         let heart = $(this);
-//         let productId = heart.data("id");
-//         let isLiked = heart.hasClass("fa-solid");
 
-//         $.ajax({
-//             url: "/toggle-like",
-//             type: "POST",
-//             data: {
-//                 product_id: productId,
-//                 _token: "{{ csrf_token() }}"
-//             },
-//             success: function (response) {
-//                 $("#likes-count-" + productId).text(response.likes);
-                
-//                 if (isLiked) {
-//                     heart.removeClass("fa-solid").addClass("fa-regular");
-//                 } else {
-//                     heart.removeClass("fa-regular").addClass("fa-solid");
-//                 }
-//             }
-//         });
-//     });
-// });
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     const likeButtons = document.querySelectorAll(".like-btn");
+
+    //     likeButtons.forEach(button => {
+    //         button.addEventListener("click", function (event) {
+    //             event.preventDefault(); // منع إعادة تحميل الصفحة عند الضغط على الزر
+
+    //             let liked = this.getAttribute("data-liked") === "true";
+    //             this.setAttribute("data-liked", liked ? "false" : "true");
+
+    //             // تغيير الأيقونة بناءً على حالة الإعجاب
+    //             this.classList.toggle("fa-regular");
+    //             this.classList.toggle("fa-solid");
+
+    //             // إرسال الطلب إلى السيرفر باستخدام Fetch API
+    //             fetch(this.closest("form").action, {
+    //                 method: "POST",
+    //                 body: new FormData(this.closest("form")),
+    //             }).then(response => response.json())
+    //               .then(data => {
+    //                   console.log("تم تحديث الإعجاب!", data);
+    //               }).catch(error => console.error("حدث خطأ!", error));
+    //         });
+    //     });
+    // });
+    document.addEventListener("DOMContentLoaded", function () {
+    fetch("/liked-products")
+        .then(response => response.json())
+        .then(likedProducts => {
+            likedProducts.forEach(productId => {
+                let heartIcon = document.querySelector(`.like-btn[data-id='${productId}']`);
+                if (heartIcon) {
+                    heartIcon.classList.remove("fa-regular");
+                    heartIcon.classList.add("fa-solid");
+                    heartIcon.setAttribute("data-liked", "true");
+                }
+            });
+        }).catch(error => console.error("خطأ في جلب بيانات الإعجاب!", error));
+    
+    // كود إدارة زر الإعجاب
+    const likeButtons = document.querySelectorAll(".like-btn");
+
+    likeButtons.forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault(); // منع إعادة تحميل الصفحة عند الضغط على الزر
+
+            let liked = this.getAttribute("data-liked") === "true";
+            this.setAttribute("data-liked", liked ? "false" : "true");
+
+            // تغيير الأيقونة بناءً على حالة الإعجاب
+            this.classList.toggle("fa-regular");
+            this.classList.toggle("fa-solid");
+
+            // إرسال الطلب إلى السيرفر باستخدام Fetch API
+            fetch(this.closest("form").action, {
+                method: "POST",
+                body: new FormData(this.closest("form")),
+            }).then(response => response.json())
+              .then(data => {
+                  console.log("تم تحديث الإعجاب!", data);
+              }).catch(error => console.error("حدث خطأ!", error));
+        });
+    });
+});
+
+
 
 
 

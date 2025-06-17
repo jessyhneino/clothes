@@ -1428,12 +1428,13 @@ body {
 
 .shose .box .card {
        width: 290px;
-       height:490px;
+       /* height:490px; */
+       height:auto;
        box-shadow: 0 0 8px var(--mainPink);
        border-radius: 5px;
        text-align: center;
        background: white;
-       padding: 10px 20px;
+       padding: 10px 20px 20px 20px;
 }
 .shose .box .card .small-card{
        display: flex;
@@ -1490,7 +1491,7 @@ body {
 }
 .shose .box .card .product-text .products-star {
         color: orange !important;
-        margin-bottom: 5px !important;
+        margin-bottom: 25px !important;
         cursor: pointer;
 
 }
@@ -1502,6 +1503,7 @@ body {
     border: 1px solid  #969090;
     font-size: 20px;
     margin-top: 10px !important;
+    border-radius: 5px;
 }
 .shose .box .card .product-text .btn3:hover{
 
@@ -2065,6 +2067,23 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     }
 } 
 /* ------------------------------------------end section create------------------------------------- */
+/* ------------------------------------------section dashboardTable------------------------------------- */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th,table td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        table td img {
+            width: 100px;
+            height: auto;
+        }
+        
 
 
 
+/* ------------------------------------------end section dashboardTable------------------------------------- */

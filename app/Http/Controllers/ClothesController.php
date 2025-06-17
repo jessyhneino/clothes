@@ -22,6 +22,11 @@ class ClothesController extends Controller
         return view('cards', compact('products'));
     }
 
+    public function dashboardTable(){
+        $products = Category::all();
+        return view('dashboardTable', compact('products'));
+    }
+
     public function complete($id){
         // $product = Category::all();
         // return view('complete',compact('articls'));

@@ -8,17 +8,14 @@ PRODUCTS
 
 <!-- ------------------------------------------ section cards-------------------------------------  -->
  
-    <form id="like-form" method="POST" action="{{route('insert')}}">
-        @csrf
+    
         <h1 class="head-shose"  > Latest Products </h1>
         <div class="btn-create">
-            @if(Auth::check() && Auth::user()->id == 2)
-                <a class="a-create" href="/create" role="button">Create</a>
-            @endif
+           
         </div>
         <div  class="shose">
             <div class="box">
-                 @foreach($products as $product)
+                @foreach($products as $product)
                     <div class="card">
                         <div class="image">
                             <img src="{{asset($product->image)}}">
@@ -33,18 +30,20 @@ PRODUCTS
                                 <i  class="fa-solid fa-star-half-stroke"></i>
                                 <i  class="fa-solid fa-star-half-stroke"></i>
                             </div>
-                            <div class="hart">
-                                <i class="fa-regular fa-heart like-btn" data-id="{{ $product->id }}" data-liked="false"></i>
-                                <span class="likes-count" id="likes-count-{{ $product->id }}">{{ $product->likes }}</span>
-                            </div>
-                            <a class="btn3" href="{{route('complete', ['id' => $product->id])}}">Show The Product</a>
-                     @if(Auth::check() && Auth::user()->id == 2)
 
-                            <div class="e-d">
-                                <a class="b-edit" href="{{route('edit', ['id' => $product->id])}}">Edit</a>
-                                <a class="b-delete" href="{{route('delete', ['id' => $product->id])}}">Delete</a>
-                            </div>
-                            @endif
+                            <form method="POST" action="{{route('likeStore',$product->id)}}">
+                                @csrf
+                                <div class="hart">
+                                    <button type="submit">
+                                        <i class="fa-regular fa-heart like-btn" data-id="{{ $product->id }}" data-liked="true"></i>
+                                    </button>
+                                    <input type="hidden" value="{{ $product->id }}" name="category_id" /> 
+                                    <!-- <span class="likes-count" id="likes-count-{{ $product->id }}"></span> -->
+                                </div>
+                            </form>
+
+                            <a class="btn3" href="{{route('complete', ['id' => $product->id])}}">Show The Product</a>
+                           
                         </div>
                     </div>
                 @endforeach
@@ -393,7 +392,6 @@ PRODUCTS
                 
             </div>
         </div>
-    </form>
 <!-- ------------------------------------------end section cards-------------------------------------  -->
 
 
