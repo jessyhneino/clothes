@@ -1388,7 +1388,7 @@ body {
 
 /* ------------------------------------------section cards------------------------------------- */
 
-.btn-create{
+/* .btn-create{
     width: 100%;
     display: flex;
     align-items: center;
@@ -1408,7 +1408,7 @@ body {
 .btn-create .a-create:hover{
     background-color: var(--nav);
     color: var(--mainPink);
-}
+} */
 .shose{
        width: 100%;
        /* height: 140vh; */
@@ -1511,7 +1511,7 @@ body {
     background:  #91919191 !important;
   
 }
-.shose .box .card .product-text .e-d{
+/* .shose .box .card .product-text .e-d{
     width: 100%;
     display: flex;
     align-items: center;
@@ -1548,7 +1548,7 @@ body {
 .shose .box .card .product-text .e-d .b-delete:hover{
     color: var(--mainPink) !important;
     background:  #91919191 !important;
-}
+} */
 
 /* .shose .box .card .product-text .hart{
     margin-bottom: 25px;
@@ -1570,7 +1570,7 @@ body {
 }
 
 .hart i.fa-solid {
-    color: red;
+    color: var(--mainPink);
 }
 
 
@@ -2069,19 +2069,56 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
 /* ------------------------------------------end section create------------------------------------- */
 /* ------------------------------------------section dashboardTable------------------------------------- */
 
-        table {
+        .tabledash{
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
-            border-collapse: collapse;
+            padding: 10px;
         }
-        table th,table td {
+        .tabledash table {
+            width: 80%;
+            border-collapse: collapse;
+            /* display: block; */
+        }
+        .tabledash table th,table td {
             border: 1px solid black;
             padding: 10px;
-            text-align: center;
+            text-align: center;  
         }
-        table td img {
+        .tabledash table td img {
             width: 100px;
             height: auto;
         }
+        .tabledash table td a {
+            text-decoration: none;
+            padding: 10px 15px;
+            color: white;
+            background: linear-gradient(to right , var(--mainPink), #91919191);
+            border: 1px solid  #969090;
+            font-size: 20px;
+            border-radius: 5px; 
+            /* flex-wrap: wrap; */
+        }
+        .tabledash table td a:hover {
+            color: var(--mainPink) !important;
+            background:  #91919191 !important;
+        }
+        @media (max-width: 1000px){
+            .tabledash table td a {
+                flex-direction: column;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 7px 10px;
+                margin: 5px 0px;
+            }
+            .tabledash table td img {
+                width: 150px;
+                height: auto;
+            }
+
+    }
         
 
 

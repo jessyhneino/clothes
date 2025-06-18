@@ -6,7 +6,7 @@ PRODUCTS
 
 @section('content') 
 
-<form method="POST" action="{{route('insert')}}">
+<form class="tabledash" method="POST" action="{{route('insert')}}">
     @csrf
      <table>
         <thead>
