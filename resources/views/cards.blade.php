@@ -10,9 +10,12 @@ PRODUCTS
  
     
         <h1 class="head-shose"  > Latest Products </h1>
-        <div class="btn-create">
-           
+
+         @if(Auth::check() && Auth::user()->id == 2)
+        <div class="btn-dashTable">
+           <a href="/dashboardTable">Dashboard Table</a>
         </div>
+        @endif
         <div  class="shose">
             <div class="box">
                 @foreach($products as $product)

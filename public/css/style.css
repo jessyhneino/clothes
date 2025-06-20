@@ -1409,6 +1409,27 @@ body {
     background-color: var(--nav);
     color: var(--mainPink);
 } */
+ .btn-dashTable{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px !important;
+
+ }
+ .btn-dashTable a{
+    text-decoration: none;
+    padding: 15px 20px;
+    color: white;
+    background: var(--mainPink);
+    border: 1px solid  var(--mainPink);
+    font-size: 20px;
+    border-radius: 5px;
+ }
+ .btn-dashTable a:hover{
+    color: var(--mainPink) !important;
+    background:  var(--nav) !important;
+ }
 .shose{
        width: 100%;
        /* height: 140vh; */
@@ -1417,7 +1438,7 @@ body {
 }
 .shose .box{
        width: 90%;
-       margin: 100px auto;
+       margin: 50px auto;
        /* display: grid;
        grid-template-columns: 1fr 1fr 1fr 1fr; */
        display: flex;
@@ -2136,7 +2157,7 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     border-bottom: 1px solid var(--mainPink);
 }
 .tabledash th {
-    background-color: hotpink;
+    background-color: var(--mainPink);
     color: white;
 }
 /* tr:hover {
@@ -2151,11 +2172,11 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
 }
 .tabledash table td a {
     display: inline-block;
-    margin-right: 5px;
-    padding: 5px 10px;
+    margin: 5px;
+    padding: 12px 17px;
     text-decoration: none;
     color: white;
-    background-color: hotpink;
+    background-color: var(--mainPink);
     border-radius: 5px;
     transition: background-color 0.3s;
 }
@@ -2187,15 +2208,13 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
         margin: 3px; 
     }
 }
-@media (max-width: 480px) {
-    .tabledash table, .tabledash thead, .tabledash tbody, .tabledash th, .tabledash td, .tabledash tr {
-        display: block; /* جعل العناصر كتلة لتسهيل القراءة */
-        width: 100%; /* جعل الجدول يأخذ عرض الشاشة بالكامل */
+ @media (max-width: 480px) {
+   /* .tabledash table, .tabledash thead, .tabledash tbody, .tabledash th, .tabledash td, .tabledash tr {
+        display: block; 
+        width: 100%; 
         text-align: left;
         overflow: hidden;
         position: relative;
-        /* left: 4px; */
-     /* padding-left: 5px; */
     }
     .tabledash table tbody tr {
         border-bottom: 2px solid hotpink;
@@ -2209,15 +2228,16 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     }
     .tabledash table tbody tr td{
         display: flex;
-        /* align-items: start; */
         justify-content: start;
     }
     .tabledash table td .table-img {
         width: 100%;
         display: flex;
-        /* align-items: start; */
         justify-content: start;
 
-    }
+    } */
+     .tabledash{
+        overflow: scroll;
+     }
 }
 /* ------------------------------------------end section dashboardTable------------------------------------- */
