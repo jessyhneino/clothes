@@ -1489,12 +1489,12 @@ body {
     font-weight: 700;
     font-size: 35px;
 }
-.shose .box .card .product-text .products-star {
+/* .shose .box .card .product-text .products-star {
         color: orange !important;
         margin-bottom: 25px !important;
         cursor: pointer;
 
-}
+} */
 .shose .box .card .product-text .btn3{
     text-decoration: none;
     padding: 15px 20px;
@@ -1566,6 +1566,7 @@ body {
 
 .hart i {
     font-size: 24px;
+    color: var(--mainPink);
     transition: color 0.3s;
 }
 
@@ -2069,7 +2070,7 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
 /* ------------------------------------------end section create------------------------------------- */
 /* ------------------------------------------section dashboardTable------------------------------------- */
 
-        .tabledash{
+        /* .tabledash{
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2079,7 +2080,6 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
         .tabledash table {
             width: 80%;
             border-collapse: collapse;
-            /* display: block; */
         }
         .tabledash table th,table td {
             border: 1px solid black;
@@ -2098,7 +2098,6 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
             border: 1px solid  #969090;
             font-size: 20px;
             border-radius: 5px; 
-            /* flex-wrap: wrap; */
         }
         .tabledash table td a:hover {
             color: var(--mainPink) !important;
@@ -2118,9 +2117,107 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
                 height: auto;
             }
 
+    } */
+
+.tabledash {
+    max-width: 100%;
+    overflow-x: auto;
+}
+.tabledash table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.tabledash th, .tabledash td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--mainPink);
+}
+.tabledash th {
+    background-color: hotpink;
+    color: white;
+}
+/* tr:hover {
+    background-color: #f1f1f1;
+} */
+.tabledash table td img {
+    max-width: 100px; /* تعيين عرض الصورة */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+}
+.tabledash table tr td{
+    text-align: center;
+}
+.tabledash table td a {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    background-color: hotpink;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.tabledash table td a:hover {
+    background-color: grey;
+}
+.tabledash table td .table-img {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
     }
-        
+/* استجابة التصميم */
+@media (max-width: 768px) {
+    .tabledash th, .tabledash td {
+        font-size: 14px; /* تقليل حجم الخط على الشاشات الصغيرة */
+        padding: 8px; /* تقليل الحشوة */
+    }
+    .tabledash table td img {
+        max-width: 70px; /* تقليل عرض الصورة على الشاشات الصغيرة */
+    }
+    .tabledash table  tbody  tr td a {
+        margin: 3px; 
+    }
+}
+@media (max-width: 578px) {
+    .tabledash table  tbody  tr td a {
+        margin: 3px; 
+    }
+}
+@media (max-width: 480px) {
+    .tabledash table, .tabledash thead, .tabledash tbody, .tabledash th, .tabledash td, .tabledash tr {
+        display: block; /* جعل العناصر كتلة لتسهيل القراءة */
+        width: 100%; /* جعل الجدول يأخذ عرض الشاشة بالكامل */
+        text-align: left;
+        overflow: hidden;
+        position: relative;
+        /* left: 4px; */
+     /* padding-left: 5px; */
+    }
+    .tabledash table tbody tr {
+        border-bottom: 2px solid hotpink;
+     }
+    .tabledash table tbody tr td a {
+        display: inline-block; 
+     }
+    .tabledash table thead tr {
+        text-align: center;
+        display: inline-block;
+    }
+    .tabledash table tbody tr td{
+        display: flex;
+        /* align-items: start; */
+        justify-content: start;
+    }
+    .tabledash table td .table-img {
+        width: 100%;
+        display: flex;
+        /* align-items: start; */
+        justify-content: start;
 
-
-
+    }
+}
 /* ------------------------------------------end section dashboardTable------------------------------------- */

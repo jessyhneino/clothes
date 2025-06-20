@@ -23,25 +23,32 @@ PRODUCTS
                         <div class="product-text">
                             <h2>{{$product->name_product}}</h2>
                             <h3>${{$product->price}}</h3>
-                            <div class="products-star">
+                            <!-- <div class="products-star">
                                 <i  class="fa-solid fa-star"></i>
                                 <i  class="fa-solid fa-star"></i>
                                 <i  class="fa-solid fa-star"></i>
                                 <i  class="fa-solid fa-star-half-stroke"></i>
                                 <i  class="fa-solid fa-star-half-stroke"></i>
+                            </div> -->
+
+                            <div class="hart">
+                                @if(Auth::check())
+                                    <form method="POST" action="{{route('likeStore',$product->id)}}">
+                                        @csrf
+                                        <button type="submit">
+                                            <i class="fa-regular fa-heart like-btn" data-id="{{ $product->id }}" data-liked="true"></i>
+                                        </button>
+                                        <input type="hidden" value="{{ $product->id }}" name="category_id" /> 
+                                        <!-- <span class="likes-count" id="likes-count-{{ $product->id }}"></span> -->
+                                    </form>
+                                @else
+                                    <div class="hart">
+                                        <button type="button" onclick="window.location.href='{{ route('login') }}'">
+                                            <i class="fa-regular fa-heart like-btn" data-id="{{ $product->id }}" data-liked="true"></i>
+                                        </button>
+                                    </div>
+                                @endif
                             </div>
-
-                            <form method="POST" action="{{route('likeStore',$product->id)}}">
-                                @csrf
-                                <div class="hart">
-                                    <button type="submit">
-                                        <i class="fa-regular fa-heart like-btn" data-id="{{ $product->id }}" data-liked="true"></i>
-                                    </button>
-                                    <input type="hidden" value="{{ $product->id }}" name="category_id" /> 
-                                    <!-- <span class="likes-count" id="likes-count-{{ $product->id }}"></span> -->
-                                </div>
-                            </form>
-
                             <a class="btn3" href="{{route('complete', ['id' => $product->id])}}">Show The Product</a>
                            
                         </div>

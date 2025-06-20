@@ -17,7 +17,7 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/cards',[ClothesController::class,'cards'])->name('cards');
+Route::get('/cards',[ClothesController::class,'cards'])->middleware('auth')->name('cards');
 Route::get('/{id}/complete', [ClothesController::class, 'complete'])->name('complete');
 Route::get('/dashboardTable', [ClothesController::class, 'dashboardTable'])->name('dashboardTable');
 Route::get('/create',[ClothesController::class,'create'])->name('create');

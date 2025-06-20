@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-PRODUCTS
+    DASHBOARD TABLE
 @endsection
 
 @section('content') 
@@ -26,7 +26,11 @@ PRODUCTS
                 <td>{{$product->id}}</td>
                 <td>{{$product->name_product}}</td>
                 <td>${{$product->price}}</td>
-                <td><img src="{{asset($product->image)}}" alt="صورة المنتج"></td>
+                <td>
+                    <div class="table-img">
+                        <img src="{{asset($product->image)}}" alt="صورة المنتج">
+                    </div>
+                </td>
                 <td>{{$product->description}}</td>
                 <td>
                     <a class="a-create" href="/create" role="button">Create</a>
