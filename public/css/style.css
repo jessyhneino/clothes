@@ -59,19 +59,20 @@ body {
 .navigation a:hover {
     color: var(--mainPink);
 }
-.navigation .login {
+.navigation .login-btn {
     /* border: 2px #fff solid; */
     background-color: var(--mainPink);
     color: #fff;
     padding: 10px;
     border-radius: 10px;
 }
-.navigation .register {
+.navigation .register-btn {
     background-color: var(--mainPink);
     color: #fff;
     /* border: 2px #fff solid; */
     padding: 10px;
     border-radius: 10px;
+    margin-right: 10px;
 }
 .navigation .logout {
     background-color: var(--mainPink);
@@ -80,13 +81,13 @@ body {
     padding: 10px;
     border-radius: 10px;
 }
-.navigation .login:hover {
+.navigation .login-btn:hover {
     border: 1px var(--mainPink) solid;
     background-color: var(--pink);
     color: var(--mainPink);
     padding: 9px;
 }
-.navigation .register:hover {
+.navigation .register-btn:hover {
     border: 1px var(--mainPink) solid;
     background-color: var(--pink);
     color: var(--mainPink);
@@ -270,14 +271,14 @@ body {
         color: #fff;
         border: 2px #fff solid;
     }
-    .navigation .login {
+    .navigation .login-btn {
         margin-bottom: 5px;
         text-align: center;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .navigation .register {
+    .navigation .register-btn {
         text-align: center;
         display: flex;
         align-items: center;

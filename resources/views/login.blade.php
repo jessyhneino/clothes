@@ -59,7 +59,7 @@ login
             </div>
 
             <!-- Login Button -->
-            <button class="btn-login" type="submit">Login</button>
+            <button class="btn-login" type="submit" onclick="window.location.href='{{ route('cards') }}'">Login</button>
 
             <!-- Forgot Password & Sign Up -->
             <div class="signup-text">

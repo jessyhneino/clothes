@@ -47,12 +47,15 @@
                     <a href="/contact">Contact</a> -->
                 </div>
                 <div class="nav-btn">
-                    <a class="login" href="{{ route('login') }}">Login </a>
-                    <a class="register" href="/register">Rigester</a>
+                    @if(Auth::check())
                     <a class="logout" href="{{ route('logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     Logout
                     </a>
+                    @else
+                    <a class="login-btn" href="{{ route('login') }}">Login </a>
+                    <a class="register-btn" href="/register">Rigester</a>
+                    @endif
                 </div>
             </nav>
         </div>

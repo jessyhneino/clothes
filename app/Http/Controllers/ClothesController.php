@@ -15,6 +15,7 @@ class ClothesController extends Controller
     // public function cards(){
     //     return view('cards');
     // }
+    
 
     public function cards(){
         // $products = DB::table('categories')->get();

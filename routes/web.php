@@ -32,6 +32,8 @@ Route::post('/{id}/store', [LikeController::class, 'store'])->middleware('auth')
 Route::get('/liked-products', [LikeController::class, 'getLikedProducts'])->name('getLikedProducts');
 
 
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
