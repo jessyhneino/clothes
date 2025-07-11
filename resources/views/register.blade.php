@@ -78,7 +78,7 @@ register
                 <a href="{{ route('login') }}">Already registered?</a>
             </div>
 
-            <button class="btn-login" type="submit" onclick="window.location.href='{{ route('cards') }}'">Register</button>
+            <button class="btn-login" type="submit" onclick="window.location.href='{{ route('login') }}'">Register</button>
         </form>
     </div>
 </div>

@@ -10,12 +10,12 @@ Route::get('/', function () {
 Route::get('/home',[ClothesController::class,'home'])->name('home');
 
 
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/register', function () {
-    return view('register');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
+// Route::get('/register', function () {
+//     return view('register');
+// });
 
 Route::get('/cards',[ClothesController::class,'cards'])->middleware('auth')->name('cards');
 Route::get('/{id}/complete', [ClothesController::class, 'complete'])->name('complete');
@@ -34,9 +34,11 @@ Route::get('/liked-products', [LikeController::class, 'getLikedProducts'])->name
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('login');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
