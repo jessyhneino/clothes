@@ -8,10 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ClothesController extends Controller
 {
-    public function home(){
-        return view('home');
-    }
-
+    
     // public function cards(){
     //     return view('cards');
     // }

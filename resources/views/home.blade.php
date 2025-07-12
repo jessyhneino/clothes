@@ -145,56 +145,16 @@ HOME
           
                 <div class="swiper  cloth-slider">
                         <div class="swiper-wrapper">
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/shose.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Sneakers</h2>
+                            @foreach($products as $product)
+                                 <div class="swiper-slide   slide">
+                                        <img src="{{asset($product->image)}}" alt="" class="user-image">
+                                        <h2 class="user-name">{{$product->name}}</h2>
                                         <a href="#shose">
                                             <!-- <button class="btn1 message-button" >Look at</button>  -->
-                                        </a>
+                                        </a> 
                                 </div>
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/Vison.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Leggings</h2>
-                                        <a href="#browse">
-                                            <!-- <button class="btn1 message-button">Look at</button>  -->
-                                        </a>
-                                </div>
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/sweater2.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Sweaters</h2>
-                                        <a href="#browse">
-                                            <!-- <button class="btn1 message-button">Look at</button>  -->
-                                        </a>
-                                </div>
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/jacket.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Jackets</h2>
-                                        <a href="#browse">
-                                            <!-- <button class="btn1 message-button">Look at</button>  -->
-                                        </a>
-                                </div>
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/sock.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Socks</h2>
-                                                
-                                        <a href="#browse">
-                                            <!-- <button class="btn1 message-button">Look at</button>  -->
-                                        </a>
-                                </div>
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/towel.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Towels</h2>
-                                        <a href="#browse">
-                                            <!-- <button class="btn1 message-button">Look at</button>  -->
-                                        </a>
-                                </div>
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/suit.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Tracksuits</h2>
-                                        <a href="#browse">
-                                            <!-- <button class="btn1 message-button">Look at</button>  -->
-                                        </a>
-                                </div>
+                            @endforeach
+
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>

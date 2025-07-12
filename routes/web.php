@@ -1,13 +1,19 @@
 <?php
 use App\Http\Controllers\ClothesController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home',[ClothesController::class,'home'])->name('home');
+Route::get('/home',[ProductController::class,'home'])->name('home');
+Route::get('/createpro',[ProductController::class,'createpro'])->name('createpro');
+Route::get('/{id}/editpro', [ProductController::class, 'editpro'])->name('editpro');
+Route::post('/insertpro',[ProductController::class,'insertpro'])->name('insertpro');
+Route::PUT('/{id}/updatepro',[ProductController::class,'updatepro'])->name('updatepro');
+Route::get('/{id}/deletepro',[ProductController::class,'deletepro'])->name('deletepro');
 
 
 // Route::get('/login', function () {
