@@ -145,7 +145,7 @@ HOME
           
                 <div class="swiper  cloth-slider">
                         <div class="swiper-wrapper">
-                            @foreach($products as $product)
+                            @foreach($products as $product) 
                                  <div class="swiper-slide   slide">
                                         <img src="{{asset($product->image)}}" alt="" class="user-image">
                                         <h2 class="user-name">{{$product->name}}</h2>
