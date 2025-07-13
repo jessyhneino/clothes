@@ -13,6 +13,11 @@ class ProductController extends Controller
         return view('home', compact('products'));
     }
 
+    public function dashboardTablecat(){
+        $products = Product::all();
+        return view('dashboardTablecat', compact('products'));
+    }
+
     public function createpro(){
         return view('createpro');
     }
@@ -32,10 +37,10 @@ class ProductController extends Controller
         $image_path = 'images/'.$file_name;
 
 Product::create([
-    'name' => $request->name_product,
+    'name' => $request->name,
     'image' => $image_path, // حفظ مسار الصورة
     // 'likes' => $request->likes,
-    'user_id'=> auth()->id(),
+    // 'user_id'=> auth()->id(),
 ]);
 return redirect()->route('home');
     }

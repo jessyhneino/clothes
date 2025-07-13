@@ -9,6 +9,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home',[ProductController::class,'home'])->name('home');
+Route::get('/dashboardTablecat', [ProductController::class, 'dashboardTablecat'])->name('dashboardTablecat');
 Route::get('/createpro',[ProductController::class,'createpro'])->name('createpro');
 Route::get('/{id}/editpro', [ProductController::class, 'editpro'])->name('editpro');
 Route::post('/insertpro',[ProductController::class,'insertpro'])->name('insertpro');

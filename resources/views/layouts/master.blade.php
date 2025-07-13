@@ -69,7 +69,6 @@
 
 <!-- ------------------------------------------ end section navbar-------------------------------------  -->
 
-
     <div class="container-new ">
         @yield('content')
     </div>
