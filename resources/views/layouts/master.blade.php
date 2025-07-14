@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
     @vite('resources/css/app.css')
     
     
@@ -37,8 +38,8 @@
         </div>
         <div class="nav-half">
             <div class="button-nav">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-dark button-search " type="submit">Search</button>
+                <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark button-search " type="submit" onclick="performSearch()">Search</button>
             </div>
             <nav class="navigation">
                 <div class="nav-link">
@@ -46,12 +47,15 @@
                     <a href="/contact">Contact</a> -->
                 </div>
                 <div class="nav-btn">
-                    <a class="login" href="{{ route('login') }}">Login </a>
-                    <a class="register" href="/register">Rigester</a>
+                    @if(Auth::check())
                     <a class="logout" href="{{ route('logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     Logout
                     </a>
+                    @else
+                    <a class="login-btn" href="{{ route('login') }}">Login </a>
+                    <a class="register-btn" href="/register">Rigester</a>
+                    @endif
                 </div>
             </nav>
         </div>
@@ -64,7 +68,6 @@
     </header>
 
 <!-- ------------------------------------------ end section navbar-------------------------------------  -->
-
 
     <div class="container-new ">
         @yield('content')
@@ -159,6 +162,8 @@
 
 //   const swiper = new Swiper(...)
 </script>-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ asset('java/main.js') }} " defer></script>
 </body>

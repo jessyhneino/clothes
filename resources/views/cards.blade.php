@@ -7,16 +7,66 @@ PRODUCTS
 @section('content') 
 
 <!-- ------------------------------------------ section cards-------------------------------------  -->
+ 
+    
+        <h1 class="head-shose"  > Latest Products </h1>
 
-    <form>
-        <h1 class="head-shose"> Latest Products </h1>
-        <div  class="shose"  id="shose">
+         @if(Auth::check() && Auth::user()->id == 2)
+        <div class="btn-dashTable">
+           <a href="/dashboardTable">Dashboard Table</a>
+        </div>
+        @endif
+        <div  class="shose">
             <div class="box">
-                <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
+                @foreach($products as $product)
+                    <div class="card">
+                        <div class="image">
+                            <img src="{{asset($product->image)}}">
+                        </div>
+                        <div class="product-text">
+                            <h2>{{$product->name_product}}</h2>
+                            <h3>${{$product->price}}</h3>
+                            <!-- <div class="products-star">
+                                <i  class="fa-solid fa-star"></i>
+                                <i  class="fa-solid fa-star"></i>
+                                <i  class="fa-solid fa-star"></i>
+                                <i  class="fa-solid fa-star-half-stroke"></i>
+                                <i  class="fa-solid fa-star-half-stroke"></i>
+                            </div> -->
+
+                            <div class="hart">
+                                @if(Auth::check())
+                                    <form method="POST" action="{{route('likeStore',$product->id)}}">
+                                        @csrf
+                                        <button type="submit">
+                                            <i class="fa-regular fa-heart like-btn" data-id="{{ $product->id }}" data-liked="true"></i>
+                                        </button>
+                                        <input type="hidden" value="{{ $product->id }}" name="category_id" /> 
+                                        <!-- <span class="likes-count" id="likes-count-{{ $product->id }}"></span> -->
+                                    </form>
+                                @else
+
+                                    <div class="hart">
+                                        <button type="button" onclick="window.location.href='{{ route('login') }}'">
+                                            <i class="fa-regular fa-heart like-btn" data-id="{{ $product->id }}" data-liked="true"></i>
+                                        </button>
+                                    </div>
+                                @endif
+                                <form method="POST" action="{{route('insertcom')}}">
+                                    @csrf
+                                    <a href="{{route('comment', ['id' => $product->id])}}">
+                                        <i class="fa-regular fa-comment"></i>
+                                    </a>
+                                </form>
+
+                            </div>
+
+                            <a class="btn3" href="{{route('complete', ['id' => $product->id])}}">Show The Product</a>
+                           
+                        </div>
+                    </div>
+                @endforeach
+                <!-- <div class="card">
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -30,16 +80,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product1"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -53,16 +97,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product2"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -77,16 +115,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                             <i  class="fa-regular fa-star"></i>    
                         </div>
-                        <a href="#details-product3"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -100,16 +132,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product4"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -123,16 +149,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product5"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -146,16 +166,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product6"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -169,16 +183,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product7"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solidfa-hear-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -192,17 +200,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product8"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
-
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -216,16 +217,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product9"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -239,17 +234,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product10"  >
-                            <button class="btn3">Add To Cart</button>
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
-
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -263,17 +251,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product11"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
-
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -287,16 +268,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product12"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -310,16 +285,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star-half-stroke"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product13"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -333,16 +302,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star-half-stroke"></i>
                         </div>
-                        <a href="#details-product14"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -356,16 +319,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product15"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -379,16 +336,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product16"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -402,16 +353,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product17"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -425,16 +370,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product18"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -448,16 +387,10 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product19"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
                     </div>
                 </div>
                 <div class="card">
-                        <!-- <div class="small-card">
-                              <i  class="fa-solid fa-heart"></i>
-                              <i  class="fa-solid fa-share"></i>     
-                        </div> -->
                     <div class="image">
                         <img src="{{asset('images/bag.jpg')}}">
                     </div>
@@ -471,14 +404,13 @@ PRODUCTS
                             <i  class="fa-solid fa-star"></i>
                             <i  class="fa-solid fa-star"></i>
                         </div>
-                        <a href="#details-product20"  >
-                            <button class="btn3">Add To Cart</button> 
-                        </a>
+                        <a class="btn3" href="/complete">Show The Product</a>
+                        
                     </div>
-                </div>
+                </div> -->
+                
             </div>
         </div>
-    </form>
 <!-- ------------------------------------------end section cards-------------------------------------  -->
 
 

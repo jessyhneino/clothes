@@ -145,56 +145,16 @@ HOME
           
                 <div class="swiper  cloth-slider">
                         <div class="swiper-wrapper">
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/shose.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Sneakers</h2>
+                            @foreach($products as $product) 
+                                 <div class="swiper-slide   slide">
+                                        <img src="{{asset($product->image)}}" alt="" class="user-image">
+                                        <h2 class="user-name">{{$product->name}}</h2>
                                         <a href="#shose">
                                             <!-- <button class="btn1 message-button" >Look at</button>  -->
-                                        </a>
+                                        </a> 
                                 </div>
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/Vison.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Leggings</h2>
-                                        <a href="#browse">
-                                            <!-- <button class="btn1 message-button">Look at</button>  -->
-                                        </a>
-                                </div>
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/sweater2.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Sweaters</h2>
-                                        <a href="#browse">
-                                            <!-- <button class="btn1 message-button">Look at</button>  -->
-                                        </a>
-                                </div>
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/jacket.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Jackets</h2>
-                                        <a href="#browse">
-                                            <!-- <button class="btn1 message-button">Look at</button>  -->
-                                        </a>
-                                </div>
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/sock.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Socks</h2>
-                                                
-                                        <a href="#browse">
-                                            <!-- <button class="btn1 message-button">Look at</button>  -->
-                                        </a>
-                                </div>
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/towel.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Towels</h2>
-                                        <a href="#browse">
-                                            <!-- <button class="btn1 message-button">Look at</button>  -->
-                                        </a>
-                                </div>
-                                <div class="swiper-slide   slide">
-                                        <img src="{{asset('images/suit.jpg')}}" alt="" class="user-image">
-                                        <h2 class="user-name">Tracksuits</h2>
-                                        <a href="#browse">
-                                            <!-- <button class="btn1 message-button">Look at</button>  -->
-                                        </a>
-                                </div>
+                            @endforeach
+
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
@@ -210,7 +170,7 @@ HOME
             just press the button and discover what awaits you!"
             </h3>
             <a class="look-a" href="/cards">
-                <button class="btn2">View The Product</button> 
+                <button class="button-look">View The Product</button> 
             </a>
         </div>
 <!-- ------------------------------------------end section view-------------------------------------  -->
@@ -226,17 +186,17 @@ HOME
                     <h2 class="map-h2">Visit one of our agency locations or contact us today </h2>
                     <h3 class="map-h3">Head Office</h3>
                     <div class="inform">
-                        <p class="map-p">  <i  class="fa-solid fa-flag"></i>    56 Glassford Street Glassgow GI IUL New York</p>
+                        <p class="map-p">  <i  class="fa-solid fa-flag"></i>    56 Glassford Street Glassgow GI IUL Berlin</p>
                         <p class="map-p">   <i  class="fa-solid fa-message"></i>    contact@lavender.com</p>
                         <p class="map-p">  <i  class="fa-solid fa-phone"></i>    contact@lavender.com</p>
                         <p class="map-p"> <i  class="fa-solid fa-clock"></i>    Monday to Saturday :9.00am to 16pm</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
 <!-- ------------------------------------------end section map-------------------------------------  -->
-        
-        <!-- <h1 class="text-3xl font-bold underline bg-blue-300 w-32 h-32">
+<!--         
+        <h1 class="text-3xl font-bold underline bg-blue-300 w-32 h-32">
                  Hello world!
         </h1> -->
             
