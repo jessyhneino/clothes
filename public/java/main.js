@@ -120,4 +120,7 @@ function animateLetters() {
     setTimeout(animateLetters, text.length * 100 + 2000);
 }
 
+
+
+
 document.addEventListener("DOMContentLoaded", animateLetters);
