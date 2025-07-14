@@ -2,6 +2,7 @@
 use App\Http\Controllers\ClothesController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,11 @@ Route::get('/{id}/delete',[ClothesController::class,'delete'])->name('delete');
 Route::post('/{id}/store', [LikeController::class, 'store'])->middleware('auth')->name('likeStore');
 Route::get('/liked-products', [LikeController::class, 'getLikedProducts'])->name('getLikedProducts');
 
+
+Route::get('/{id}/comment',[CommentController::class,'comment'])->name('comment');
+Route::post('/insertcom',[CommentController::class,'insertcom'])->name('insertcom');
+Route::PUT('/{id}/updatecom',[CommentController::class,'updatecom'])->name('updatecom');
+Route::get('/{id}/deletecom',[CommentController::class,'deletecom'])->name('deletecom');
 
 
 

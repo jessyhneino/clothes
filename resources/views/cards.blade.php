@@ -45,13 +45,22 @@ PRODUCTS
                                         <!-- <span class="likes-count" id="likes-count-{{ $product->id }}"></span> -->
                                     </form>
                                 @else
+
                                     <div class="hart">
                                         <button type="button" onclick="window.location.href='{{ route('login') }}'">
                                             <i class="fa-regular fa-heart like-btn" data-id="{{ $product->id }}" data-liked="true"></i>
                                         </button>
                                     </div>
                                 @endif
+                                <form method="POST" action="{{route('insertcom')}}">
+                                    @csrf
+                                    <a href="{{route('comment', ['id' => $product->id])}}">
+                                        <i class="fa-regular fa-comment"></i>
+                                    </a>
+                                </form>
+
                             </div>
+
                             <a class="btn3" href="{{route('complete', ['id' => $product->id])}}">Show The Product</a>
                            
                         </div>

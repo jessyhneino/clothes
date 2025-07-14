@@ -2314,4 +2314,52 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     margin: 20px 0px;
 }
 /* ------------------------------------------end section sidebar------------------------------------- */
+/* ------------------------------------------section comment------------------------------------- */
+.comment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    flex-direction: column;
+    text-align: center;
+}
+.comment div{
+    margin-bottom: 20px;
+}
+.comment div p{
+margin-bottom: 5px;
+font-size: 25px;
+font-weight: bold;
+}
+.comment div li{
+font-size: 20px;
+}
+.comment .comment-input{
+    /* margin-bottom: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 120px;
+}
+.comment .create-control {
+    width: 500px;
+    /* margin: 0px 10px; */
+    margin-left: 20px;
+}
+.comment .button .create-label {
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--nav);
+    background-color: var(--mainPink);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--mainPink);
+}
+.comment .button .create-label:hover{
+    color: var(--mainPink);
+    background-color: var(--nav);
+}
+/* ------------------------------------------end section comment------------------------------------- */
+
 
