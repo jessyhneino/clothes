@@ -4,42 +4,57 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comment;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 
 class CommentController extends Controller
 {
     public function comment($id){
-        $products = Comment::find($id);
-        return view('comment', compact('products'));
+        $category = Category::with(['comments.user'])->findOrFail($id);
+        return view('comment', compact('category'));
     }
 
     public function insertcom(Request $request){
-        $userId = auth()->id();
-        $categoryId = $request->category_id;
+        $request->validate([
+            'comment' => 'required|string|max:1000',
+            'category_id' => 'required|exists:categories,id'
+        ]);
 
-Comment::create([
-    'comment' => $request->comment,
-    'user_id' => $userId,
-    'category_id' => $categoryId,
-    // 'likes' => $request->likes,
-    // 'user_id'=> auth()->id(),
-]);
-return redirect()->route('comment');
+        Comment::create([
+            'comment' => $request->comment,
+            'user_id' => auth()->id(),
+            'category_id' => $request->category_id,
+        ]);
+
+        return redirect()->back()->with('success', 'تم إضافة التعليق بنجاح!');
     }
 
     public function updatecom(Request $request, $id){
-         $product = Comment::findorFail($id);
-        $product->update([
-            'comment'=>$request->comment,
-            // 'user_id'=> auth()->id(),
-            // 'category_id'=> auth()->id(),
+        $request->validate([
+            'comment' => 'required|string|max:1000'
         ]);
-        return redirect()->route('comment');
+
+        $comment = Comment::findOrFail($id);
+        
+        if ($comment->user_id !== auth()->id()) {
+            return redirect()->back()->with('error', 'لا يمكنك تعديل هذا التعليق');
+        }
+
+        $comment->update([
+            'comment' => $request->comment,
+        ]);
+
+        return redirect()->back()->with('success', 'تم تحديث التعليق بنجاح!');
     }
 
     public function deletecom($id){
-        DB::table('comments')->where('id',$id)->delete();
-        return redirect()->route('comment');
+        $comment = Comment::findOrFail($id);
+        
+        if ($comment->user_id !== auth()->id()) {
+            return redirect()->back()->with('error', 'لا يمكنك حذف هذا التعليق');
+        }
 
+        $comment->delete();
+        return redirect()->back()->with('success', 'تم حذف التعليق بنجاح!');
     }
 }
