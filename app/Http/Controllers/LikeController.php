@@ -31,6 +31,7 @@ class LikeController extends Controller
     {
         $userId = auth()->id();
         $categoryId = $request->category_id;
+        $productwinterId = $request->productwinter_id;
 
         // البحث عن الإعجاب الحالي
         $like = Like::where('user_id', $userId)
@@ -53,10 +54,45 @@ class LikeController extends Controller
         return response()->json(['status' => $status]);
     }
 
+
+     public function storew(Request $request)
+    {
+        $userId = auth()->id();
+        $productwinterId = $request->productwinter_id;
+
+        // البحث عن الإعجاب الحالي
+        $like = Like::where('user_id', $userId)
+                    ->where('productwinter_id', $productwinterId)
+                    ->first();
+
+        if ($like) {
+            // إذا كان الإعجاب موجودًا، نحذفه
+            $like->delete();
+            $status = 'deleted';
+        } else {
+            // إذا لم يكن الإعجاب موجودًا، نضيفه
+            Like::create([
+                'user_id' => $userId,
+                'productwinter_id' => $productwinterId,
+            ]);
+            $status = 'added';
+        }
+
+        return response()->json(['status' => $status]);
+    }
+
     public function getLikedProducts()
         {
             $userId = auth()->id();
             $likedProducts = Like::where('user_id', $userId)->pluck('category_id');
+
+            return response()->json($likedProducts);
+        }
+
+        public function getLikedProductsw()
+        {
+            $userId = auth()->id();
+            $likedProducts = Like::where('user_id', $userId)->pluck('productwinter_id');
 
             return response()->json($likedProducts);
         }

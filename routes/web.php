@@ -2,6 +2,7 @@
 use App\Http\Controllers\ClothesController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductwinterController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,13 @@ Route::post('/insertcom',[CommentController::class,'insertcom'])->name('insertco
 Route::PUT('/{id}/updatecom',[CommentController::class,'updatecom'])->name('updatecom');
 Route::get('/{id}/deletecom',[CommentController::class,'deletecom'])->name('deletecom');
 
+
+Route::get('/cardswinter',[ProductwinterController::class,'cardswinter'])->middleware('auth')->name('cardswinter');
+Route::get('/createwinter',[ProductwinterController::class,'createwinter'])->name('createwinter');
+Route::get('/{id}/editwinter', [ProductwinterController::class, 'editwinter'])->name('editwinter');
+Route::post('/insertwinter',[ProductwinterController::class,'insertwinter'])->name('insertwinter');
+Route::PUT('/{id}/updatewinter',[ProductwinterController::class,'updatewinter'])->name('updatewinter');
+Route::get('/{id}/deletewinter',[ProductwinterController::class,'deletewinter'])->name('deletewinter');
 
 
 // Route::get('/dashboard', function () {
