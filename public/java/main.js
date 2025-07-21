@@ -518,3 +518,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // *****************************************************************************************
+// ****************************************filter*************************************************
+function filterProducts(season) {
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        const cardSeason = card.getAttribute('data-season');
+
+        if (season === 'all' || cardSeason === season) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+// ****************************************filter*************************************************

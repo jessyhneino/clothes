@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\Category;
-use App\Models\Productwinter;
 use Illuminate\Support\Facades\DB;
 
 class CommentController extends Controller

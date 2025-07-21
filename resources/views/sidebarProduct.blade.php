@@ -1,6 +1,7 @@
-<nav class="sidebarProduct">
+<nav class="sidebarProduct" id="filter-buttons">
     <ul>
-        <li><a href="/cards"><i class="fa fa-home"></i>SUMMER CLOTHING</a></li>
-        <li><a href="/cardswinter"><i class="fa fa-book"></i>WINTER CLOTHING</a></li>
+        <li><button onclick="filterProducts('all')" href="#"><i class="fa fa-home"></i>ALL</button ></li>
+        <li><button onclick="filterProducts('summer')" href="#"><i class="fa fa-book"></i>SUMMER CLOTHING</button ></li>
+        <li><button onclick="filterProducts('winter')" href="#"><i class="fa fa-book"></i>WINTER CLOTHING</button ></li>
     </ul>
 </nav>

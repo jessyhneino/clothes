@@ -3638,10 +3638,10 @@ font-size: 20px;
     padding: 20px;
     list-style: none;
 }
-.sidebarProduct ul li a i{
+.sidebarProduct ul li button i{
     margin-right: 5px;
 }
-.sidebarProduct ul li a{
+.sidebarProduct ul li button{
     /* display: block; */
     text-decoration: none;
     text-transform: uppercase;
@@ -3651,21 +3651,21 @@ font-size: 20px;
     padding: 20px 20px 20px 20px;
     /* margin-left: 30px; */
 }
-.sidebarProduct ul li a::before{
+.sidebarProduct ul li button::before{
     content: '';
     background: black;
     border-radius: 40px 0 0 40px;
     z-index: -1;
     transition: all 400ms ease-in-out;
 }
-.sidebarProduct ul li a:hover{
+.sidebarProduct ul li button:hover{
     color: silver;
     background: black;
     transition: all 400ms ease-in-out;
     border-radius: 40px 40px 40px 40px;
     height: 100%;
 }
-.sidebarProduct ul li a:hover::before{
+.sidebarProduct ul li button:hover::before{
     width: 95%;
 }
 /* ------------------------------------------end section sidebarProduct------------------------------------- */

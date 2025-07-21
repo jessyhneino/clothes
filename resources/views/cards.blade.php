@@ -44,7 +44,7 @@ Latest Products - Professional Fashion Store
         <div class="shose">
             <div class="box">
                 @foreach($products as $product)
-                    <div class="card" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+                    <div class="card" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}" data-season="{{ $product->season }}">
                         <div class="image">
                             <img src="{{asset($product->image)}}" alt="{{$product->name_product}}" loading="lazy">
                             <div class="image-overlay">
