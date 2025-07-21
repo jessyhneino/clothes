@@ -29,7 +29,7 @@ Latest Products - Professional Fashion Store
 
 
 
-        @if(Auth::check() && Auth::user()->id == 2)
+        @if(Auth::check() && Auth::user()->id == 1)
         <div class="btn-dashTable">
            <a href="/dashboardTable">
                <i class="fas fa-table"></i>

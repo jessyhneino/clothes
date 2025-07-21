@@ -13,7 +13,7 @@ CREATE PRO
         @csrf
         <div class="mb-3 create-input">
             <label class="create-label">Name</label>
-            <input name="name_product" type="text" class="create-control">
+            <input name="name" type="text" required class="create-control">
         </div>
         <div class="mb-3 create-input">
             <label class="create-label">Image</label>

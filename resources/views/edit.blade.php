@@ -24,6 +24,14 @@ EDIT
             <label class="create-label">Image</label>
             <input name="image" type="file" class="create-control" value="{{$product->image}}">
         </div>
+        <!-- <div class="mb-3 create-input">
+            <label class="create-label">Season</label>
+            <input name="season" type="text" class="create-control" value="{{$product->season}}">
+        </div> -->
+        <select name="season" class="form-control">
+            <option value="summer">صيفي</option>
+            <option value="winter">شتوي</option>
+        </select>
         <div class="mb-3 create-input">
             <label class="create-label">Description</label>
             <textarea name="description" class="create-control" rows="8" >{{$product->description}}</textarea>

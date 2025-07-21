@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name_product', 'price', 'image', 'likes','description','user_id'];
+    protected $fillable = ['name_product', 'price', 'image', 'likes','description','user_id','season'];
 
     public function comments()
     {

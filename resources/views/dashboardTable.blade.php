@@ -19,6 +19,7 @@
                 <th>Name_Product</th>
                 <th>Price</th>
                 <th>Image</th>
+                <th>Season</th>
                 <th>Description</th>
                 <th>Button</th>
             </tr>
@@ -35,6 +36,7 @@
                         <img src="{{asset($product->image)}}" alt="صورة المنتج">
                     </div>
                 </td>
+                <td>{{$product->season}}</td>
                 <td>{{$product->description}}</td>
                 <td>
                     <a class="a-create" href="/create" role="button">Create</a>

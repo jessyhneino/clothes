@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name_product');
+             $table->string('name_product');
             $table->integer('price');
             $table->string('image');
             $table->longText('description');
             // $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->nullable();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->integer('likes')->default(0);
+            $table->string('season')->nullable();
             $table->timestamps();
         });
     }

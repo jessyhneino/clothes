@@ -62,6 +62,7 @@ Category::create([
     'name_product' => $request->name_product,
     'price' => $request->price,
     'image' => $image_path, // حفظ مسار الصورة
+    'season' => $request->season,
     'description' => $request->description,
     // 'likes' => $request->likes,
     'user_id'=> auth()->id(),
@@ -116,6 +117,7 @@ Category::create([
             'name_product'=>$request->name_product,
             'price'=>$request->price,
             'image'=>$image_path,
+            'season' => $request->season,
             'description'=>$request->description,
         ]);
         return redirect()->route('cards');
