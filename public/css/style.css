@@ -2099,15 +2099,30 @@ body {
     box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
 }
 
-.hart i.fa-solid {
-    color: var(--mainPink);
-    animation: pulse 2s infinite;
+.hart .like-btn.fa-solid {
+    color: #ef4444 !important;
+    animation: heartBeat 1.5s ease-in-out;
 }
 
-@keyframes pulse {
+.hart .like-btn.fa-solid:hover {
+    color: #dc2626 !important;
+    transform: scale(1.1);
+}
+
+.hart .like-btn.fa-regular {
+    color: #ec4899;
+}
+
+.hart .like-btn.fa-regular:hover {
+    color: #db2777;
+}
+
+@keyframes heartBeat {
     0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
 }
 
 /* New Professional Elements */
@@ -3669,6 +3684,172 @@ font-size: 20px;
     width: 95%;
 }
 /* ------------------------------------------end section sidebarProduct------------------------------------- */
+
+/* تنسيقات أعداد الإعجابات والتعليقات */
+.likes-count,
+.comments-count {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--mainGray);
+    background: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    min-width: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-left: 0.25rem;
+}
+
+.likes-count {
+    color: var(--mainPink);
+    background: rgba(236, 72, 153, 0.1);
+}
+
+.comments-count {
+    color: var(--mainGray);
+    background: rgba(100, 116, 139, 0.1);
+}
+
+.hart .like-btn-wrapper,
+.hart .comment-btn-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hart .like-btn-wrapper button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.hart .like-btn-wrapper button:focus {
+    outline: none;
+}
+
+.hart .like-btn.fa-solid {
+    color: #ef4444 !important;
+    animation: heartBeat 1.5s ease-in-out;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+}
+
+/* تحسين مظهر الأيقونات */
+.hart i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* تحسين التباعد */
+.hart {
+    gap: 1.5rem;
+}
+
+.hart .like-btn-wrapper,
+.hart .comment-btn-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* تنسيقات رسائل الإشعار */
+.notification {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Poppins', sans-serif;
+}
+
+.notification-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.notification-error {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+/* تحسين مظهر الأيقونات في الإعجابات */
+.hart .like-btn-wrapper button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.hart .like-btn-wrapper button:hover {
+    transform: scale(1.1);
+}
+
+/* تحسين مظهر أعداد الإعجابات والتعليقات */
+.likes-count,
+.comments-count {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.likes-count {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(236, 72, 153, 0.1) 100%);
+    border: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+.comments-count {
+    background: linear-gradient(135deg, rgba(100, 116, 139, 0.15) 0%, rgba(100, 116, 139, 0.1) 100%);
+    border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+/* تنسيقات مؤشر التحميل */
+.loading-spinner {
+    color: var(--mainPink);
+    font-size: 1.2rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* تحسين مظهر الأزرار أثناء التحميل */
+.like-btn-wrapper button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.like-btn-wrapper button:disabled .like-btn {
+    opacity: 0.6;
+}
+
+/* تنسيقات إضافية للقلب */
+.like-btn {
+    transition: all 0.3s ease !important;
+}
+
+.like-btn.fa-solid {
+    color: #ef4444 !important;
+}
+
+.like-btn.fa-regular {
+    color: #ec4899 !important;
+}
+
+/* تأثيرات إضافية للقلب */
+.like-btn:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
 
 
 

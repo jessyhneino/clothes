@@ -50,7 +50,15 @@ class LikeController extends Controller
             $status = 'added';
         }
 
-        return response()->json(['status' => $status]);
+        // الحصول على عدد الإعجابات الجديد
+        $likesCount = Like::where('category_id', $categoryId)->count();
+        
+        return response()->json([
+            'status' => $status,
+            'likesCount' => $likesCount,
+            'isLiked' => $status === 'added',
+            'message' => $status === 'added' ? 'تم إضافة الإعجاب بنجاح' : 'تم إزالة الإعجاب بنجاح'
+        ]);
     }
 
     public function getLikedProducts()

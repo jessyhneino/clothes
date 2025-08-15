@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use Illuminate\Support\Facades\DB;
+use App\Models\Like;
 
 class ClothesController extends Controller
 {
@@ -15,9 +16,19 @@ class ClothesController extends Controller
     
 
     public function cards(){
-        // $products = DB::table('categories')->get();
-        $products = Category::all();
-        return view('cards', compact('products'));
+        // تحميل المنتجات مع العلاقات
+        $products = Category::with(['likes', 'comments'])->get();
+        
+        // إذا كان المستخدم مسجل دخول، نحصل على المنتجات التي أعجب بها
+        $likedProducts = [];
+        if (auth()->check()) {
+            $likedProducts = Like::where('user_id', auth()->id())->pluck('category_id')->toArray();
+        }
+        
+        // تحميل البيانات بشكل أكثر كفاءة
+        $products->loadCount(['likes', 'comments']);
+        
+        return view('cards', compact('products', 'likedProducts'));
     }
 
     public function dashboardTable(){

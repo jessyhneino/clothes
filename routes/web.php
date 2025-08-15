@@ -11,12 +11,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home',[ProductController::class,'home'])->name('home');
-Route::get('/dashboardTablecat', [ProductController::class, 'dashboardTablecat'])->name('dashboardTablecat');
-Route::get('/createpro',[ProductController::class,'createpro'])->name('createpro');
-Route::get('/{id}/editpro', [ProductController::class, 'editpro'])->name('editpro');
-Route::post('/insertpro',[ProductController::class,'insertpro'])->name('insertpro');
-Route::PUT('/{id}/updatepro',[ProductController::class,'updatepro'])->name('updatepro');
-Route::get('/{id}/deletepro',[ProductController::class,'deletepro'])->name('deletepro');
+Route::get('/dashboardTablecat', [ProductController::class, 'dashboardTablecat'])->middleware('auth')->name('dashboardTablecat');
+Route::get('/createpro',[ProductController::class,'createpro'])->middleware('auth')->name('createpro');
+Route::get('/{id}/editpro', [ProductController::class, 'editpro'])->middleware('auth')->name('editpro');
+Route::post('/insertpro',[ProductController::class,'insertpro'])->middleware('auth')->name('insertpro');
+Route::PUT('/{id}/updatepro',[ProductController::class,'updatepro'])->middleware('auth')->name('updatepro');
+Route::get('/{id}/deletepro',[ProductController::class,'deletepro'])->middleware('auth')->name('deletepro');
 
 
 // Route::get('/login', function () {
@@ -26,14 +26,14 @@ Route::get('/{id}/deletepro',[ProductController::class,'deletepro'])->name('dele
 //     return view('register');
 // });
 
-Route::get('/cards',[ClothesController::class,'cards'])->middleware('auth')->name('cards');
+Route::get('/cards',[ClothesController::class,'cards'])->name('cards');
 Route::get('/{id}/complete', [ClothesController::class, 'complete'])->name('complete');
-Route::get('/dashboardTable', [ClothesController::class, 'dashboardTable'])->name('dashboardTable');
-Route::get('/create',[ClothesController::class,'create'])->name('create');
-Route::get('/{id}/edit', [ClothesController::class, 'edit'])->name('edit');
-Route::post('/insert',[ClothesController::class,'insert'])->name('insert');
-Route::PUT('/{id}/update',[ClothesController::class,'update'])->name('update');
-Route::get('/{id}/delete',[ClothesController::class,'delete'])->name('delete');
+Route::get('/dashboardTable', [ClothesController::class, 'dashboardTable'])->middleware('auth')->name('dashboardTable');
+Route::get('/create',[ClothesController::class,'create'])->middleware('auth')->name('create');
+Route::get('/{id}/edit', [ClothesController::class, 'edit'])->middleware('auth')->name('edit');
+Route::post('/insert',[ClothesController::class,'insert'])->middleware('auth')->name('insert');
+Route::PUT('/{id}/update',[ClothesController::class,'update'])->middleware('auth')->name('update');
+Route::get('/{id}/delete',[ClothesController::class,'delete'])->middleware('auth')->name('delete');
 
 // Route::post('/toggle-like', [ClothesController::class, 'toggleLike'])->name('toggle.like');
 
