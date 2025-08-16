@@ -27,7 +27,7 @@ Route::get('/{id}/deletepro',[ProductController::class,'deletepro'])->middleware
 // });
 
 Route::get('/cards',[ClothesController::class,'cards'])->name('cards');
-Route::get('/{id}/complete', [ClothesController::class, 'complete'])->name('complete');
+Route::get('/{id}/complete', [ClothesController::class, 'complete'])->name('complete')->middleware('auth');
 Route::get('/dashboardTable', [ClothesController::class, 'dashboardTable'])->middleware('auth')->name('dashboardTable');
 Route::get('/create',[ClothesController::class,'create'])->middleware('auth')->name('create');
 Route::get('/{id}/edit', [ClothesController::class, 'edit'])->middleware('auth')->name('edit');
@@ -41,7 +41,7 @@ Route::post('/{id}/store', [LikeController::class, 'store'])->middleware('auth')
 Route::get('/liked-products', [LikeController::class, 'getLikedProducts'])->name('getLikedProducts');
 
 
-Route::get('/{id}/comment',[CommentController::class,'comment'])->name('comment');
+Route::get('/{id}/comment',[CommentController::class,'comment'])->name('comment')->middleware('auth');
 Route::post('/insertcom',[CommentController::class,'insertcom'])->name('insertcom');
 Route::PUT('/{id}/updatecom',[CommentController::class,'updatecom'])->name('updatecom');
 Route::get('/{id}/deletecom',[CommentController::class,'deletecom'])->name('deletecom');

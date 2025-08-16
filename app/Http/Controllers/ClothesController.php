@@ -42,13 +42,16 @@ class ClothesController extends Controller
     }
 
     public function complete($id){
-        // $product = Category::all();
-        // return view('complete',compact('articls'));
-
-        $product = Category::find($id);
+        // تحميل المنتج مع العلاقات
+        $product = Category::with(['likes', 'comments'])->find($id);
         
-        return view('complete' , compact('product'));
+        // إذا كان المستخدم مسجل دخول، نحصل على حالة الإعجاب
+        $isLiked = false;
+        if (auth()->check()) {
+            $isLiked = $product->isLikedByUser();
+        }
         
+        return view('complete', compact('product', 'isLiked'));
     }  
 
     public function create(){
