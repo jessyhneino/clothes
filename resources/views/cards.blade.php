@@ -72,7 +72,6 @@ Latest Products - Professional Fashion Store
                             </div>
 
                             <div class="hart">
-                                <!-- تم إزالة أزرار التعليق والإعجاب وعداداتهم -->
                             </div>
 
                             <a class="btn3" href="{{route('complete', ['id' => $product->id])}}">
