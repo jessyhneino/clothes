@@ -45,18 +45,17 @@
 :root {
     --background: #f8fafc;
     --nav: #ffffff;
-    --text: #1e293b;
+    --text: black;
     --mainPink: #ec4899;
     --mainPinkHover: #db2777;
-    --mainGray: #64748b;
+    --mainGray: gray;
     --lightGray: #f1f5f9;
     --border: #e2e8f0;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadowHover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadowHover: 0 10px 15px -3px rgba(101, 101, 101, 0.473), 0 4px 6px -2px rgba(170, 169, 169, 0.495);
     --gradient: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
     --gradientHover: linear-gradient(135deg, #db2777 0%, #ea580c 100%);
 }
-
 body { 
     width: 100%;
     background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
@@ -141,7 +140,7 @@ body {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background: var(--gradient);
+    background: var(--mainPink);
     transition: width 0.3s ease;
 }
 
@@ -152,13 +151,13 @@ body {
 .navigation .login-btn,
 .navigation .register-btn,
 .navigation .logout {
-    background: var(--gradient);
+    background: var(--mainPink);
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: none;
+    border: 2px solid var(--mainPink);
     cursor: pointer;
     box-shadow: var(--shadow);
 }
@@ -166,9 +165,9 @@ body {
 .navigation .login-btn:hover,
 .navigation .register-btn:hover,
 .navigation .logout:hover {
-    background: var(--gradientHover);
+    background: var(--nav);
     transform: translateY(-2px);
-    box-shadow: var(--shadowHover);
+    box-shadow: var(--mainPink);
 }
 
 .button-nav {
@@ -178,7 +177,7 @@ body {
 }
 
 .button-nav button {
-    background: var(--gradient);
+    background: var(--mainPink);
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -190,7 +189,7 @@ body {
 }
 
 .button-nav button:hover {
-    background: var(--gradientHover);
+    background: var(--mainPink);
     transform: translateY(-2px);
     box-shadow: var(--shadowHover);
 }
@@ -198,7 +197,7 @@ body {
 .hamburger {
     display: none;
     cursor: pointer;
-    /* background: var(--gradient); */
+    /* background: var(--mainPink); */
     border: none;
     border-radius: 8px;
     padding: 0.5rem;
@@ -207,7 +206,7 @@ body {
 }
 
 /* .hamburger:hover {
-    background: var(--gradientHover);
+    background: var(--mainPink);
     transform: scale(1.1);
 } */
 
@@ -588,7 +587,7 @@ body {
 
 /* ------------------------------------------section footer------------------------------------- */
 .footer{
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    background: black;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     display: flex;
     align-items: center;
@@ -605,7 +604,7 @@ body {
     left: 0;
     right: 0;
     height: 1px;
-    background: var(--gradient);
+    background: var(--mainPink);
 }
 
 .footer footer{
@@ -656,7 +655,7 @@ body {
     margin-bottom: 1.5rem;
     font-size: 1rem;
     line-height: 1.6;
-    color: #cbd5e1;
+    color: var(--nav);
 }
 
 .wrapper .footer-widget .socials {
@@ -675,7 +674,7 @@ body {
     height: 50px;
     border-radius: 50%;
     font-size: 1.25rem;
-    background: var(--gradient);
+    background: var(--mainPink);
     color: white;
     text-decoration: none;
     display: flex;
@@ -686,7 +685,7 @@ body {
 }
 
 .wrapper .footer-widget .socials li a:hover{
-    background: var(--gradientHover);
+    background: var(--mainPink);
     color: white;
     transform: translateY(-3px) scale(1.1);
     box-shadow: var(--shadowHover);
@@ -707,7 +706,7 @@ body {
     left: 0;
     width: 30px;
     height: 2px;
-    background: var(--gradient);
+    background: var(--mainPink);
     border-radius: 1px;
 }
 
@@ -718,7 +717,7 @@ body {
 
 .wrapper .footer-widget .links li a{
     text-decoration: none;
-    color: #cbd5e1;
+    color: var(--nav);
     font-size: 1rem;
     text-transform: capitalize;
     line-height: 1.6;
@@ -747,13 +746,13 @@ body {
 
 .copyright-wrapper{
     padding: 2rem 0;
-    border-top: 1px solid #475569;
+    border-top: 1px solid var(--mainGray);
     text-align: center;
     background: rgba(0, 0, 0, 0.2);
 }
 
 .copyright-wrapper .copyright-p{
-    color: #cbd5e1;
+    color: var(--nav);
     font-size: 0.95rem;
     margin: 0;
 }
@@ -858,7 +857,7 @@ body {
 
 .home .HPbt .HP .H {
     font-size: 4rem;
-    background: var(--gradient);
+    background: var(--mainPink);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -881,7 +880,7 @@ body {
 }
 
 .home .btn1 {
-    background: var(--gradient);
+    background: var(--mainPink);
     border: none;
     border-radius: 30px;
     color: white;
@@ -917,7 +916,7 @@ body {
 }
 
 .home .btn1:hover{
-    background: var(--gradientHover);
+    background: var(--mainPink);
     transform: translateY(-3px);
     box-shadow: var(--shadowHover);
 }
@@ -1108,7 +1107,7 @@ body {
     left: 0;
     right: 0;
     height: 5px;
-    background: var(--gradient);
+    background: var(--mainPink);
     transform: scaleX(0);
     transition: transform 0.4s ease;
     z-index: 2;
@@ -1194,7 +1193,7 @@ body {
     left: 0;
     width: 40px;
     height: 3px;
-    background: var(--gradient);
+    background: var(--mainPink);
     border-radius: 2px;
     transition: width 0.3s ease;
 }
@@ -1349,7 +1348,7 @@ body {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: var(--gradient);
+    background: var(--mainPink);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -1369,7 +1368,7 @@ body {
 /* Card read more button */
 .card-container .card-home .card-read-more {
     display: inline-block;
-    background: var(--gradient);
+    background: var(--mainPink);
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
@@ -1406,7 +1405,7 @@ body {
 }
 
 .card-container .card-home .card-read-more:hover {
-    background: var(--gradientHover);
+    background: var(--mainPink);
     transform: translateY(-2px);
     box-shadow: var(--shadowHover);
 }
@@ -1948,7 +1947,7 @@ body {
    left: 0;
    right: 0;
    height: 4px;
-   background: var(--gradient);
+   background: var(--mainPink);
    transform: scaleX(0);
    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -2035,7 +2034,7 @@ body {
     text-decoration: none;
     padding: 1rem 2rem;
     color: white;
-    background: var(--gradient);
+    background: var(--mainPink);
     border: none;
     font-size: 1rem;
     margin-top: 1.5rem !important;
@@ -2065,7 +2064,7 @@ body {
 }
 
 .shose .box .card .product-text .btn3:hover{
-    background: var(--gradientHover);
+    background: var(--mainPink);
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 15px 35px rgba(236, 72, 153, 0.4);
 }
@@ -2194,7 +2193,7 @@ body {
 }
 
 .shose .box .card .badge-new {
-    background: var(--gradient);
+    background: var(--mainPink);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -2287,7 +2286,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--gradient);
+    background: var(--mainPink);
     color: white;
     padding: 1rem 2rem;
     border-radius: 50px;
@@ -2298,7 +2297,7 @@ body {
 }
 
 .btn-dashTable a:hover {
-    background: var(--gradientHover);
+    background: var(--mainPink);
     transform: translateY(-3px);
     box-shadow: 0 15px 35px rgba(236, 72, 153, 0.4);
 }
@@ -2490,7 +2489,7 @@ body {
   transform: translateX(-50%);
   width: 100px;
   height: 4px;
-  background: var(--gradient);
+  background: var(--mainPink);
   border-radius: 2px;
 }
 
@@ -2907,7 +2906,7 @@ body {
        width: 100%;
        padding: 1rem;
        border: none;
-       background: var(--gradient);
+       background: var(--mainPink);
        color: white;
        font-size: 1rem;
        font-weight: 600;
@@ -2935,7 +2934,7 @@ body {
 }
 
 .login  .details-login .btn-login:hover {
-      background: var(--gradientHover);
+      background: var(--mainPink);
       transform: translateY(-2px);
       box-shadow: var(--shadowHover);
 }
@@ -2970,21 +2969,29 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     margin: 20px;
     flex-direction: column;
     text-align: center;
+    border: 2px solid var(--mainPink) !important;
+    background-color: rgba(255, 105, 180, 0.097) !important;
 }
 .create .create-input{
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: end;
+    color: black !important;
     /* margin-right: 120px; */
 }
 .create .create-control {
     width: 500px;
     margin-left: 20px;
+    color: black !important;
+    border: 1px solid var(--mainPink) !important;
+
 }
 .create .create-label {
     font-size: 20px;
     font-weight: bold;
+    color: black !important;
+
 }
 .create .button {
     display: flex;
@@ -2994,11 +3001,11 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     margin-left: 20px;
 }
 .create .button button {
-    background-color: var(--mainPink);
+    background-color: var(--mainPink) !important;
     border-radius: 10px;
     padding: 10px 25px;
-    color: var(--nav);
-    border: 1px solid var(--mainPink);
+    color: var(--nav) !important;
+    border: 1px solid var(--mainPink) !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3006,8 +3013,8 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     font-size: 25px;
 }
 .create .button button:hover {
-    background-color: var(--nav);
-    color: var(--mainPink);
+    background-color: var(--nav) !important;
+    color: var(--mainPink) !important;
 }
 @media (max-width: 550px){
     .create .create-control {
@@ -3043,7 +3050,7 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
 }
 
 .tabledash th {
-    background: var(--gradient);
+    background: var(--mainPink);
     color: white;
     font-weight: 600;
     font-size: 1rem;
@@ -3066,7 +3073,7 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     padding: 0.75rem 1rem;
     text-decoration: none;
     color: white;
-    background: var(--gradient);
+    background: var(--mainPink);
     border-radius: 25px;
     transition: all 0.3s ease;
     font-weight: 500;
@@ -3075,7 +3082,7 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
 }
 
 .tabledash table td a:hover {
-    background: var(--gradientHover);
+    background: var(--mainPink);
     transform: translateY(-2px);
     box-shadow: var(--shadowHover);
 }
@@ -3280,7 +3287,7 @@ font-size: 20px;
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background: var(--gradient);
+    background: var(--mainPink);
     color: white;
     text-decoration: none;
     border-radius: 25px;
@@ -3290,7 +3297,7 @@ font-size: 20px;
 }
 
 .product-info .back-btn:hover {
-    background: var(--gradientHover);
+    background: var(--mainPink);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(236, 72, 153, 0.4);
 }
@@ -3371,7 +3378,7 @@ font-size: 20px;
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    background: var(--gradient);
+    background: var(--mainPink);
     color: white;
     border: none;
     border-radius: 25px;
@@ -3383,7 +3390,7 @@ font-size: 20px;
 }
 
 .submit-btn:hover {
-    background: var(--gradientHover);
+    background: var(--mainPink);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(236, 72, 153, 0.4);
 }
@@ -3456,7 +3463,7 @@ font-size: 20px;
 .user-avatar {
     width: 50px;
     height: 50px;
-    background: var(--gradient);
+    background: var(--mainPink);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3674,7 +3681,7 @@ font-size: 20px;
     transition: all 400ms ease-in-out;
 }
 .sidebarProduct ul li button:hover{
-    color: silver;
+    color: var(--nav);
     background: black;
     transition: all 400ms ease-in-out;
     border-radius: 40px 40px 40px 40px;

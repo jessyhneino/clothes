@@ -79,7 +79,7 @@ EDIT
             <textarea name="description" class="create-control" rows="6" style="width:100%;padding:8px 10px;border:1px solid #d1d5db;border-radius:6px;background:#ffffff;color:#111827;outline:none;" >{{$product->description}}</textarea>
         </div>
         <div class="button" style="margin-top:12px;text-align:right;">
-            <button type="submit" class="btn " style="background:#4b5563;color:#ffffff;border:1px solid #4b5563;padding:8px 14px;border-radius:6px;cursor:pointer;font-weight:600;">حفظ</button>
+            <button type="submit" class="btn " style="background:#4b5563;color:#ffffff;border:1px solid #4b5563;padding:8px 14px;border-radius:6px;cursor:pointer;font-weight:600;">Edit</button>
         </div>
     </form>
 </div>

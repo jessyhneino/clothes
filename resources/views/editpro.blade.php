@@ -59,7 +59,7 @@ EDIT POR
             <input id="imageInputPro" name="image" type="file" class="create-control" accept="image/*" style="display:block;width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:8px;background:#ffffff;color:#111827;outline:none;">
         </div>
         <div class="button" style="margin-top:20px;text-align:center;">
-            <button type="submit" class="btn " style="background:#4b5563;color:#ffffff;border:1px solid #4b5563;padding:12px 22px;border-radius:8px;cursor:pointer;font-weight:700;min-width:140px;">حفظ</button>
+            <button type="submit" class="btn " style="background:#4b5563;color:#ffffff;border:1px solid #4b5563;padding:12px 22px;border-radius:8px;cursor:pointer;font-weight:700;min-width:140px;">Edit</button>
         </div>
     </form>
 </div>

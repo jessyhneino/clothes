@@ -27,7 +27,7 @@ CREATE
             <label class="create-label">Season</label>
             <input name="season" type="text" class="create-control">
         </div> -->
-        <select name="season" class="form-control" style="width:100%;padding:10px 12px;border:1px solid #d1d5db;border-radius:6px;background:#ffffff;color:#111827;outline:none;margin-bottom:16px;">
+        <select name="season" class="form-control" style="width:16%;padding:10px 12px;border:1px solid #ec4899;border-radius:6px;background:#ffffff;color:#111827;outline:none;margin-bottom:16px;">
             <option value="summer">صيفي</option>
             <option value="winter">شتوي</option>
         </select>

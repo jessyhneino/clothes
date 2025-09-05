@@ -103,10 +103,10 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             text-align: center;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #28a745;
             width: 100% !important;
         ">
-            <div style="font-size: 2rem; color: #667eea; margin-bottom: 8px;">
+            <div style="font-size: 2rem; color: #28a745; margin-bottom: 8px;">
                 <i class="fas fa-box"></i>
             </div>
             <h3 style="margin: 0; color: #333; font-size: 1.3rem;">{{ count($products) }}</h3>
@@ -119,10 +119,10 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             text-align: center;
-            border-left: 4px solid #28a745;
+            border-left: 4px solid #ffc107;
             width: 100% !important;
         ">
-            <div style="font-size: 2rem; color: #28a745; margin-bottom: 8px;">
+            <div style="font-size: 2rem; color: #ffc107; margin-bottom: 8px;">
                 <i class="fas fa-sun"></i>
             </div>
             <h3 style="margin: 0; color: #333; font-size: 1.3rem;">{{ $products->where('season', 'summer')->count() }}</h3>
@@ -135,10 +135,10 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             text-align: center;
-            border-left: 4px solid #ffc107;
+            border-left: 4px solid #667eea;
             width: 100% !important;
         ">
-            <div style="font-size: 2rem; color: #ffc107; margin-bottom: 8px;">
+            <div style="font-size: 2rem; color: #667eea; margin-bottom: 8px;">
                 <i class="fas fa-snowflake"></i>
             </div>
             <h3 style="margin: 0; color: #333; font-size: 1.3rem;">{{ $products->where('season', 'winter')->count() }}</h3>
@@ -239,7 +239,7 @@
                             <td style="
                                 padding: 18px 15px;
                                 font-weight: 600;
-                                color: #667eea;
+                                color:rgb(0, 0, 0);
                                 font-size: 0.9rem;
                             ">#{{$product->id}}</td>
                             <td style="
@@ -276,7 +276,7 @@
                                     font-size: 0.8rem;
                                     font-weight: 600;
                                     text-transform: uppercase;
-                                    {{ $product->season === 'summer' ? 'background: #fff3cd; color: #856404;' : 'background: #d1ecf1; color: #0c5460;' }}
+                                    {{ $product->season === 'summer' ? 'background:rgb(254, 239, 188); color: #856404;' : 'background:rgb(190, 229, 235); color: #0c5460;' }}
                                 ">{{$product->season}}</span>
                             </td>
                             <td style="
@@ -296,7 +296,7 @@
                                 ">
                                     <a class="b-edit" href="{{route('edit', ['id' => $product->id])}}" style="
                                         padding: 8px 16px;
-                                        background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+                                        background: linear-gradient(135deg,rgb(23, 85, 184) 0%,rgb(42, 157, 223) 100%);
                                         color: white;
                                         text-decoration: none;
                                         border-radius: 6px;
@@ -304,13 +304,13 @@
                                         font-weight: 500;
                                         transition: all 0.3s ease;
                                         box-shadow: 0 2px 8px rgba(23, 162, 184, 0.3);
-                                    " onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(23, 162, 184, 0.4)'" 
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(23, 162, 184, 0.3)'">
+                                    " onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgb(42, 157, 223)'" 
+                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgb(42, 157, 223)'">
                                         <i class="fas fa-edit" style="margin-right: 5px;"></i>Edit
                                     </a>
                                     <a class="b-delete" href="{{route('delete', ['id' => $product->id])}}" style="
                                         padding: 8px 16px;
-                                        background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+                                        background: linear-gradient(135deg,rgb(246, 0, 25) 0%,rgb(248, 77, 94) 100%);
                                         color: white;
                                         text-decoration: none;
                                         border-radius: 6px;
@@ -318,8 +318,8 @@
                                         font-weight: 500;
                                         transition: all 0.3s ease;
                                         box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
-                                    " onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(220, 53, 69, 0.4)'" 
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(220, 53, 69, 0.3)'">
+                                    " onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgb(248, 77, 94)'" 
+                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgb(248, 77, 94)'">
                                         <i class="fas fa-trash" style="margin-right: 5px;"></i>Delete
                                     </a>
                                 </div>
