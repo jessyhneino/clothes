@@ -46,17 +46,26 @@ return redirect()->route('home');
     }
 
     public function updatepro(Request $request, $id){
-        $file_extension = $request->image->getClientOriginalExtension();
+        $product = Product::findOrFail($id);
+
+    // تحقق إذا تم رفع صورة جديدة
+    if ($request->hasFile('image')) {
+        $file_extension = $request->file('image')->getClientOriginalExtension();
         $file_name = time().'.'.$file_extension;
-        $path = public_path('images'); // تحديد المسار داخل public
-        $request->image->move($path, $file_name);
+        $path = public_path('images');
+        $request->file('image')->move($path, $file_name);
         $image_path = 'images/'.$file_name;
-         $product = Product::findorFail($id);
-        $product->update([
-            'name'=>$request->name,
-            'image'=>$image_path,
-        ]);
-        return redirect()->route('home');
+
+        // تحديث الصورة فقط إذا تم رفعها
+        $product->image = $image_path;
+    }
+
+    // تحديث باقي البيانات
+    $product->name = $request->name;
+    $product->save();
+
+    return redirect()->route('home');
+
     }
 
     public function deletepro($id){

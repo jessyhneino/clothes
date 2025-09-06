@@ -114,27 +114,29 @@ Category::create([
     }
 
     public function update(Request $request, $id){
-        $file_extension = $request->image->getClientOriginalExtension();
+        $product = Category::findOrFail($id);
+
+    // تحقق إذا الملف موجود
+    if ($request->hasFile('image')) {
+        $file_extension = $request->file('image')->getClientOriginalExtension();
         $file_name = time().'.'.$file_extension;
-        $path = public_path('images'); // تحديد المسار داخل public
-        $request->image->move($path, $file_name);
+        $path = public_path('images');
+        $request->file('image')->move($path, $file_name);
         $image_path = 'images/'.$file_name;
 
-        // DB::table('categories')->where('id',$id)->update([
-        //     'name_product'=>$request->name_product,
-        //     'price'=>$request->price,
-        //     'image'=>$image_path,
-        //     'description'=>$request->description,
-        // ]);
-        $product = Category::findorFail($id);
-        $product->update([
-            'name_product'=>$request->name_product,
-            'price'=>$request->price,
-            'image'=>$image_path,
-            'season' => $request->season,
-            'description'=>$request->description,
-        ]);
-        return redirect()->route('cards');
+        // تحديث الصورة إذا تم رفعها
+        $product->image = $image_path;
+    }
+
+    // تحديث باقي البيانات
+    $product->name_product = $request->name_product;
+    $product->price = $request->price;
+    $product->season = $request->season;
+    $product->description = $request->description;
+    $product->save();
+
+    return redirect()->route('cards');
+
     }
 
     public function delete($id){
