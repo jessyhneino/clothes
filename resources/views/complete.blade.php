@@ -44,7 +44,7 @@ HOME
                     </a>
                 </div>
                 
-                <!-- <div class="div-select">
+                <div class="div-select">
                     <select class="select-pro1">
                         <option value="">Size </option>
                         <option value="1"> SM </option>
@@ -54,15 +54,19 @@ HOME
                         <option value=""> XXL </option>
                         <option value=""> XXXL </option>   
                     </select>  
-                </div>             -->
+                </div>            
 
                 
                  <div class="mb-3 create-input" style="margin-bottom:12px;">
                     <label class="create-label" style="display:block;margin-bottom:6px;font-weight:600;color:#374151;">Quantity</label>
-                    <input name="quantity" class="create-control" value="{{$product->quentity}}" style="width:100%;padding:8px 10px;border:1px solid #d1d5db;border-radius:6px;background:#ffffff;color:#111827;outline:none;">
+                    <input type="number" 
+    name="quantity" 
+    class="create-control" 
+    value="1" 
+    min="1" style="width:100%;padding:8px 10px;border:1px solid #d1d5db;border-radius:6px;background:#ffffff;color:#111827;outline:none;">
                 </div>    
 
-                <button class="add-to-cart" data-id="{{ $product->id }}"  data-price="{{ $product->price }}">أضف إلى السلة</button>
+                <button class="add-to-cart" data-id="{{ $product->id }}"  data-price="{{ $product->price }}">Add to basket</button>
             
 
                 <div class="product-details2">
