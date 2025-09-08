@@ -44,4 +44,9 @@ class Category extends Model
         
         return $this->likes()->where('user_id', $userId)->exists();
     }
+
+    public function cartItems()
+    {
+        return $this->hasMany(\App\Models\CartItem::class);
+    }
 }

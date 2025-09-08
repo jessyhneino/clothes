@@ -15,7 +15,9 @@ HOME
             <div class="detail-pro1">
                 <p class="p-pro1">Womens Fashion Lavender</p>
                 <h2 class="h2-pro1">{{$product->name_product}}</h2>
-                <h1 class="h1-pro1">${{$product->price}}</h1>
+                <!-- <h1 class="h1-pro1">${{$product->price}}</h1> -->
+                <h1 class="h1-pro1">${{ number_format($product->price,2) }} ₪</h1>
+                
                 
                 <!-- أزرار الإعجاب والتعليق -->
                 <div class="hart">
@@ -42,7 +44,7 @@ HOME
                     </a>
                 </div>
                 
-                <div class="div-select">
+                <!-- <div class="div-select">
                     <select class="select-pro1">
                         <option value="">Size </option>
                         <option value="1"> SM </option>
@@ -52,12 +54,17 @@ HOME
                         <option value=""> XXL </option>
                         <option value=""> XXXL </option>   
                     </select>  
-                </div>            
-                <div class="btn-pro1">
-                    <a href="#">
-                        <button class="btn-pro11">Add To Basket</button> 
-                    </a>
-                </div>
+                </div>             -->
+
+                
+                 <div class="mb-3 create-input" style="margin-bottom:12px;">
+                    <label class="create-label" style="display:block;margin-bottom:6px;font-weight:600;color:#374151;">Quantity</label>
+                    <input name="quantity" class="create-control" value="{{$product->quentity}}" style="width:100%;padding:8px 10px;border:1px solid #d1d5db;border-radius:6px;background:#ffffff;color:#111827;outline:none;">
+                </div>    
+
+                <button class="add-to-cart" data-id="{{ $product->id }}"  data-price="{{ $product->price }}">أضف إلى السلة</button>
+            
+
                 <div class="product-details2">
                     <h3 class="h3-pro1">Product Details :</h3>
                     <p class="p-pro2">{{$product->description}}</p>
@@ -141,5 +148,56 @@ function toggleLike(productId, button) {
         }
     });
 }
+
+// ********************************************* Cart ************************************************
+document.addEventListener('DOMContentLoaded', function() {
+    const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    function addToCart(productId, qty = 1) {
+        fetch("{{ route('cart.add') }}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-TOKEN": token
+            },
+            body: JSON.stringify({
+                product_id: productId,
+                quantity: qty
+            })
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (data.success) {
+                // تحديث عدد العناصر في Navbar (اختياري)
+                const el = document.getElementById('cart-count');
+                if (el) el.innerText = data.cart_count;
+
+                // إعادة التوجيه لصفحة السلة
+                window.location.href = data.redirect_url;
+            } else {
+                alert(data.message || 'خطأ أثناء الإضافة');
+            }
+        })
+        .catch(() => alert('حدث خطأ في الاتصال'));
+    }
+
+    // ربط الزر مع الكمية
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const productId = this.dataset.id;
+
+            // قراءة الكمية من input المرتبط بالزر
+            const quantityInput = this.parentElement.querySelector('input[name="quantity"]');
+            const qty = parseInt(quantityInput.value) || 1;
+
+            addToCart(productId, qty);
+        });
+    });
+});
+
+
+
+
+
 </script>
 @endpush

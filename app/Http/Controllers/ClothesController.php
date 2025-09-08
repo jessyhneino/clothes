@@ -169,6 +169,13 @@ Category::create([
     //     return response()->json(['likes' => $category->likes]);
     // }
 
+    // public function add_cart(Request $request){
+    //     if($request->isMethod('post')){
+    //         return response()->json(['data' => $request->all()]);
+    //     }else{
+    //         return redirect()->route('home');
+    //     }
+    // }
 
 
 }

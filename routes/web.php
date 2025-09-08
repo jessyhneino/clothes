@@ -4,6 +4,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProductController;
 // use App\Http\Controllers\ProductwinterController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,6 +46,18 @@ Route::get('/{id}/comment',[CommentController::class,'comment'])->name('comment'
 Route::post('/insertcom',[CommentController::class,'insertcom'])->name('insertcom');
 Route::PUT('/{id}/updatecom',[CommentController::class,'updatecom'])->name('updatecom');
 Route::get('/{id}/deletecom',[CommentController::class,'deletecom'])->name('deletecom');
+
+
+
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add', [CartController::class, 'store'])->name('cart.add');
+Route::put('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::post('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+
+
+// Route::post('/add-cart',[ClothesController::class,'add-cart']);
 
 
 // Route::get('/cardswinter',[ProductwinterController::class,'cardswinter'])->middleware('auth')->name('cardswinter');

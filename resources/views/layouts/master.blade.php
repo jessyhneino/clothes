@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
     @vite('resources/css/app.css')
     
@@ -45,6 +46,9 @@
                 <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-dark button-search " type="submit" onclick="performSearch()">Search</button>
             </div>
+
+            <a href="{{ route('cart.index') }}">السلة (<span id="cart-count">{{ \App\Models\Cart::countForCurrent() }}</span>)</a>
+    
             <nav class="navigation">
                 <div class="nav-link">
                     <!-- <a href="/services">Services</a>
