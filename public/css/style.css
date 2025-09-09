@@ -2639,6 +2639,16 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.backToBro{
+    padding: 10px 20px;
+    background:linear-gradient(to right , hotpink, #91919191);
+    color: var(--nav);
+    border: 2px solid var(--mainPink);
+    border-radius: 10px;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .details-product1 .detail-pro1 .div-select .select-pro1 option{
     color: var(--mainGray);
 }
@@ -3192,6 +3202,7 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     align-items: center;
     justify-content: center;
 }
+
 .sidebar ul .side-logo img{
     width: 130px;
     height: 130px;
@@ -3962,8 +3973,38 @@ font-size: 20px;
 }
 
 /* المجموع */
+.back-cart {
+    display: flex;                  /* يخلي العناصر جنب بعض */
+    justify-content:end; /* واحد يسار وواحد يمين */
+    align-items: center;            /* محاذاة عمودية بالنص */
+    margin-top: 20px;
+    padding: 15px 20px;
+    background: #f9fafb;            /* خلفية فاتحة */
+    border: 1px solid #e5e7eb;      /* بوردر خفيف */
+    border-radius: 8px;             /* زوايا مدورة */
+}
+
+.back-a {
+    text-decoration: none;
+    background: var(--mainPink);
+    color: #fff;
+    border: 2px var(--mainPink) solid;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.back-a:hover {
+    background: #fff;
+    color: var(--mainPink);           
+}
+
 .subtotal {
-    text-align: left;
+     text-align: right;
     font-size: 25px;
     font-weight: bold;
     margin: 30px 0px;

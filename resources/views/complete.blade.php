@@ -67,6 +67,7 @@ HOME
                 </div>    
 
                 <button class="add-to-cart" data-id="{{ $product->id }}"  data-price="{{ $product->price }}">Add to basket</button>
+                <a class="backToBro" href="/cards">Return to product</a>
             
 
                 <div class="product-details2">

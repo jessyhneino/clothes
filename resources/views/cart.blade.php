@@ -52,8 +52,12 @@ CART
                     @endforeach
                 </tbody>
             </table>
-
-            <p class="subtotal"><strong> The final total: </strong>{{ number_format($subtotal,2) }}</p>
+            <div class="back-cart">
+                
+                <p class="subtotal"><strong> The final total: </strong>{{ number_format($subtotal,2) }}</p>
+                <a class="back-a" href="/cards"> Return to product </a>
+                
+            </div>
         </div>
     @endif
 @endsection

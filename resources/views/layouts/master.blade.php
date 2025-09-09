@@ -47,7 +47,7 @@
                 <button class="btn btn-outline-dark button-search " type="submit" onclick="performSearch()">Search</button>
             </div>
 
-            <a class="basket" href="{{ route('cart.index') }}"><i class="fas fa-shopping-cart"></i> <span id="cart-count">({{ \App\Models\Cart::countForCurrent() }})</span></a>
+            <a class="basket" href="/cart"><i class="fas fa-shopping-cart"></i> <span id="cart-count">({{ \App\Models\Cart::countForCurrent() }})</span></a>
     
             <nav class="navigation">
                 <div class="nav-link">
